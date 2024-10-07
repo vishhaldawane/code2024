@@ -1,0 +1,61 @@
+
+public class Greeting {
+
+	public static void main(String[] args) {
+
+	
+		//-128 -127 -126 .....-3 -2 -1 0  1 2 3...127
+		// <--------------------256------------------>
+		
+		byte b = -128;
+		System.out.println("b "+b);
+		System.out.println("size of b "+Byte.SIZE+ " bits");
+		
+		short s = 16000;
+		System.out.println("s "+s);
+		System.out.println("size of s "+Short.SIZE+ " bits");
+		
+		
+		int i = 340000;
+		System.out.println("i "+i);
+		System.out.println("size of i "+Integer.SIZE+ " bits");
+		
+		
+		long l = 12345678900L;
+		System.out.println("l "+l);
+		System.out.println("size of l "+Long.SIZE+ " bits");
+		
+		
+		char ans = 'Y';
+		System.out.println("ans "+ans);
+		System.out.println("size of ans "+Character.SIZE+ " bits");
+		
+		
+		boolean isCertified = true;
+		System.out.println("isCertified "+isCertified);
+		System.out.println("size of l ");
+		
+	}
+
+}
+/*
+
+
+			primitive			non-primitive
+				|
+	-------------------------------------------
+	|			|			|			|
+	integral  floating		character	Boolean
+	|			|			|			|
+	byte  1		float  4	char 2		boolean 1
+	short 2		double 8
+	int   4
+	long  8
+	
+	
+
+*/
+
+
+
+

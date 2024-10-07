@@ -1,0 +1,38 @@
+
+public class Greeting {
+
+	public static void main(String[] args) {
+
+		System.out.println("Hello World");
+		System.out.println("Snooze World");
+		System.out.println("Jagrut World");
+		
+		//-128 -127 -126 .....-3 -2 -1 0  1 2 3...127
+		// <--------------------256------------------>
+		
+		byte b = -128;
+		System.out.println("b "+b);
+	}
+
+}
+/*
+
+
+			primitive			non-primitive
+				|
+	-------------------------------------------
+	|			|			|			|
+	integral  floating		character	Boolean
+	|			|			|			|
+	byte  1		float  4	char 2		boolean 1
+	short 2		double 8
+	int   4
+	long  8
+	
+	
+
+*/
+
+
+
+

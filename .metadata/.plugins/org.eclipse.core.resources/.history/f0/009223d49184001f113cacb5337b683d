@@ -1,0 +1,10 @@
+
+public class BankTest {
+
+	public static void main(String[] args) {
+
+		BankAccount bankAccountObjRef1 = new BankAccount(101,"Julie",5000);
+		System.out.println("bank acc obj ref 1 value : "+bankAccountObjRef1);
+	}
+
+}

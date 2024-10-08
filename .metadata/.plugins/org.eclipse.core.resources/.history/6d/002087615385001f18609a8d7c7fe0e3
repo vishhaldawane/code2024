@@ -1,0 +1,97 @@
+
+public class PersonTest {
+	public static void main(String[] args) {
+		
+		Person persona = new Person('F',20,"Ruchika");
+		persona.showPerson();
+		
+		persona.setName("Ruchika Jamwal");
+		persona.showPerson();
+		persona.setAge(persona.getAge()+1);
+		persona.showPerson();
+
+		
+	}
+}		
+class Person
+{
+	private char gender;
+	private int age;
+	private String name;
+	
+	public Person(char gender, int age, String name) {
+		super();
+		this.gender = gender;
+		this.age = age;
+		this.name = name;
+	}
+	
+	void showPerson()
+	{
+		System.out.println("--- PERSONAL DETAILS ---");
+		System.out.println("Gender : "+gender);
+		System.out.println("Age    : "+age);
+		System.out.println("Name   : "+name);
+		System.out.println("-------------------------");
+		
+	}
+
+	public char getGender() {
+		return gender;
+	}
+
+	public void setGender(char gender) {
+		this.gender = gender;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+	
+}
+
+class Student extends Person
+{
+	int rollNumber;
+	String collegeName;
+	String stream;
+	char grade;
+	
+	public Student(char gender, int age, String name, int rollNumber, String collegeName, String stream, char grade) {
+		super(gender, age, name);
+		this.rollNumber = rollNumber;
+		this.collegeName = collegeName;
+		this.stream = stream;
+		this.grade = grade;
+	}
+	
+	void showStudent()
+	{
+		super.showPerson();
+
+		System.out.println("--- ACADEMIC DETAILS ---");
+		System.out.println("RollNo : "+rollNumber);
+		System.out.println("College: "+collegeName);
+		System.out.println("Stream : "+stream);
+		System.out.println("Grade  : "+grade);
+		System.out.println("-------------------------");
+		
+	}
+	
+	
+}
+
+
+

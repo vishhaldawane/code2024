@@ -1,0 +1,32 @@
+
+public class PersonTest {
+	public static void main(String[] args) {
+		
+		Person persona = new Person('F',20,"Ruchika");
+		persona.showPerson();
+	}
+}		
+class Person
+{
+	private char gender;
+	private int age;
+	private String name;
+	
+	public Person(char gender, int age, String name) {
+		super();
+		this.gender = gender;
+		this.age = age;
+		this.name = name;
+	}
+	
+	void showPerson()
+	{
+		System.out.println("--- PERSONAL DETAILS ---");
+		System.out.println("Gender : "+gender);
+		System.out.println("Age    : "+age);
+		System.out.println("Name   : "+name);
+		System.out.println("-------------------------");
+		
+	}
+	
+}

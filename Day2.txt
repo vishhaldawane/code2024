@@ -547,8 +547,14 @@ OOPS
 4. Inheritance
 
 
+		Acquiring properties from existing business entities
 
-
+		class A // A is the super class
+		{
+		}
+		class B extends A // B is the sub class
+		{
+		}
 
 
 

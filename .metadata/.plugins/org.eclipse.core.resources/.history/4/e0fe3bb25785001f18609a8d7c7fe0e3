@@ -9,12 +9,6 @@ public class PersonTest {
 	
 		Student student = new Student('F',20,"Seema",5566,"Bharathi Vidyapeeth","MCA",'A');
 		student.showStudent();
-	
-		System.out.println("=================");
-		
-		Employee employee = new Employee('F',21,"Julie",1166,"Vidyalankar","BCA",'A', 1155,"IT","Developer",55000);
-		employee.showEmployee();
-	
 	}
 }		
 class Person
@@ -98,42 +92,5 @@ class Student extends Person
 	
 }
 
-
-
-class Employee extends Student //isA
-{
-	int empNumber;
-	String department;
-	String designation;
-	float salary;
-	
-	
-	
-	public Employee(char gender, int age, String name, int rollNumber, String collegeName, String stream, char grade,
-			int empNumber, String department, String designation, float salary) {
-		super(gender, age, name, rollNumber, collegeName, stream, grade);
-		this.empNumber = empNumber;
-		this.department = department;
-		this.designation = designation;
-		this.salary = salary;
-	}
-
-
-
-	void showEmployee()
-	{
-		super.showStudent();
-
-		System.out.println("--- EMPLOYEE DETAILS ---");
-		System.out.println("EmpNo  : "+empNumber);
-		System.out.println("Dept   : "+department);
-		System.out.println("Desg   : "+designation);
-		System.out.println("Salary : "+salary);
-		System.out.println("-------------------------");
-		
-	}
-	
-	
-}
 
 

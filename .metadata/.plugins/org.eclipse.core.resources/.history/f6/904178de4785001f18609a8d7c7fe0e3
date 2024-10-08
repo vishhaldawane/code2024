@@ -1,0 +1,78 @@
+
+
+/*
+ * formula of creating anything in this world
+ * 
+ * thoughts + feel = action + result
+ *  |
+ *  faster than light
+ *  invisible
+ *  non-linear
+ *  
+ */
+public class InheritanceTest {
+	public static void main(String[] args) {
+		
+		
+
+		AudioBook audioBook = new AudioBook();
+	}
+}
+class Book // extends Object 
+{
+	String title;
+	String author;
+	float price;
+	int numberOfPages;
+	
+	Book() {
+		System.out.println("Book ctor...");
+
+	}
+	
+}
+
+
+class AudioBook extends Book
+{
+	int duration;// 4 fields inhertied  + duration  + narrator
+	String narrator;
+	
+	AudioBook() {
+		System.out.println("AudioBook ctor...");
+	}
+	
+}
+
+
+class Person
+{
+	char gender;
+	int age;
+	String name;
+}
+class Student extends Person
+{
+	char grade;
+	String stream;
+}
+class Employee extends Student
+{
+	int empno;
+	String desg;
+	float salary;
+}
+
+
+
+
+
+
+class PDF extends Book
+{
+	int sizeInMB; // 4 fields inhertied + sizeInMB here
+	
+	PDF() {
+		System.out.println("PDF ctor...");
+	}
+}

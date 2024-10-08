@@ -3,25 +3,24 @@ import java.time.LocalDate;
 public class PersonTest {
 	public static void main(String[] args) {
 		
-		Person persona = new Person('F',20,"Ruchika","123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
-		//The field Person.adhaar is not visible
-		//persona.adhaar.setAdhaarCard("123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
-		//persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
+		Person persona = new Person('F',20,"Ruchika");
+		persona.adhaar.setAdhaarCard("123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
+		persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
 		persona.showPerson();
 		
 		System.out.println("============================================");
 	
 		Student student = new Student('F',20,"Seema",5566,"Bharathi Vidyapeeth","MCA",'A');
-		//student.adhaar.setAdhaarCard("888812349999", "Seema Agarwal", "Vashi", "7722997766", LocalDate.of(2003, 04, 29));
-		//student.pan.setPanCard("SOPER1136P", "Satish Agarwal");
+		student.adhaar.setAdhaarCard("888812349999", "Seema Agarwal", "Vashi", "7722997766", LocalDate.of(2003, 04, 29));
+		student.pan.setPanCard("SOPER1136P", "Satish Agarwal");
 
 		student.showStudent();
 	
 		System.out.println("============================================");
 		
 		Employee employee = new Employee('F',21,"Julie",1166,"Vidyalankar","BCA",'A', 1155,"IT","Developer",55000);
-		//employee.adhaar.setAdhaarCard("444412347777", "Julie D'mello", "Airoli", "3322991166", LocalDate.of(2004, 05, 30));
-		//employee.pan.setPanCard("JRTQW2233Q", "Simon D'mello");
+		employee.adhaar.setAdhaarCard("444412347777", "Julie D'mello", "Airoli", "3322991166", LocalDate.of(2004, 05, 30));
+		employee.pan.setPanCard("JRTQW2233Q", "Simon D'mello");
 
 		employee.showEmployee();
 	
@@ -92,24 +91,14 @@ class Person
 	private char gender; //1 hasA
 	private int age;		//2 hasA
 	private String name;	//3 hasA
-	
-	//UDT
-	private AdhaarCard adhaar = new AdhaarCard(); //4 hasA - empty One
-	private PanCard pan = new PanCard(); //5 hasA
+	AdhaarCard adhaar = new AdhaarCard(); //4 hasA - empty One
+	PanCard pan = new PanCard();
 	
 	public Person(char gender, int age, String name) {
 		super();
 		this.gender = gender;
 		this.age = age;
 		this.name = name;
-	}
-	
-	public Person(char gender, int age, String name, String an, String fn, String add, String ph, LocalDate dob) {
-		super();
-		this.gender = gender;
-		this.age = age;
-		this.name = name;
-		adhaar.setAdhaarCard(an, fn, add, ph, dob);
 	}
 	
 	void showPerson()

@@ -3,10 +3,12 @@ import java.time.LocalDate;
 public class PersonTest {
 	public static void main(String[] args) {
 		
-		Person persona = new Person('F',20,"Ruchika","123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
+		Person persona = new Person('F',20,null,
+				"123412341234", "Ruchika Arun Jamwal","CBD Belapur", 
+				"9822997766", LocalDate.of(2002, 03, 19));
 		//The field Person.adhaar is not visible
 		//persona.adhaar.setAdhaarCard("123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
-		//persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
+		persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
 		persona.showPerson();
 		
 		System.out.println("============================================");
@@ -37,14 +39,12 @@ class AdhaarCard
 	private LocalDate birthDate; //java.time
 	
 	public void setAdhaarCard(String adhaarNumber, String fullName, String address, String phoneNumber, LocalDate birthDate) {
-		
 		this.adhaarNumber = adhaarNumber;
 		this.fullName = fullName;
 		this.address = address;
 		this.phoneNumber = phoneNumber;
 		this.birthDate = birthDate;
 	}
-	
 	void showAdhaarCard() {
 		System.out.println("--Adhaar Details---");
 		System.out.println("Adhaar Number : "+adhaarNumber);
@@ -54,9 +54,6 @@ class AdhaarCard
 		System.out.println("Adhaar DOB    : "+birthDate);
 		System.out.println("----------------------");
 	}
-	
-	
-	
 }
 
 
@@ -65,15 +62,11 @@ class PanCard
 	private String panNumber; //12 digit
 	private String fatherName;
 	
-	
-	
 	public void setPanCard(String panNumber, String fatherName) {
 		
 		this.panNumber = panNumber;
 		this.fatherName = fatherName;
 	}
-
-
 
 	void showPanCard() {
 		System.out.println("--Pan Details---");
@@ -81,14 +74,10 @@ class PanCard
 		System.out.println("Father Name   : "+fatherName);
 		System.out.println("----------------------");
 	}
-	
-	
-	
 }
 
 class Person
 {
-	
 	private char gender; //1 hasA
 	private int age;		//2 hasA
 	private String name;	//3 hasA
@@ -104,11 +93,12 @@ class Person
 		this.name = name;
 	}
 	
-	public Person(char gender, int age, String name, String an, String fn, String add, String ph, LocalDate dob) {
+	public Person(char gender, int age, String name, 
+			String an, String fn, String add, String ph, LocalDate dob) {
 		super();
 		this.gender = gender;
 		this.age = age;
-		this.name = name;
+		this.name = fn;
 		adhaar.setAdhaarCard(an, fn, add, ph, dob);
 	}
 	
@@ -146,7 +136,6 @@ class Person
 	public void setName(String name) {
 		this.name = name;
 	}
-	
 }
 
 class Student extends Person
@@ -167,17 +156,13 @@ class Student extends Person
 	void showStudent()
 	{
 		super.showPerson();
-
 		System.out.println("--- ACADEMIC DETAILS ---");
 		System.out.println("RollNo : "+rollNumber);
 		System.out.println("College: "+collegeName);
 		System.out.println("Stream : "+stream);
 		System.out.println("Grade  : "+grade);
-		System.out.println("-------------------------");
-		
+		System.out.println("-------------------------");	
 	}
-	
-	
 }
 
 

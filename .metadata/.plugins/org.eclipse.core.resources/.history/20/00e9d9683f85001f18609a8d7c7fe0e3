@@ -1,0 +1,20 @@
+
+public class InheritanceTest {
+	public static void main(String[] args) {
+		
+		Book book = new Book();
+		
+	}
+}
+class Book
+{
+	Book() {
+		System.out.println("Book ctor...");
+	}
+}
+class AudioBook extends Book
+{
+	AudioBook() {
+		System.out.println("AudioBook ctor...");
+	}
+}

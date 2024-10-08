@@ -1,0 +1,20 @@
+
+public class InheritanceTest {
+	public static void main(String[] args) {
+		
+		Q q = new Q();
+		
+	}
+}
+class P
+{
+	P() {
+		System.out.println("P ctor...");
+	}
+}
+class Q extends P
+{
+	Q() {
+		System.out.println("Q ctor...");
+	}
+}

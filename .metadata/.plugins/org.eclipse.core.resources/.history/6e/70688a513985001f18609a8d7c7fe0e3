@@ -19,10 +19,6 @@ public class ConstructorTest {
 				Kite kite = new Kite(100, "Jack");
 				kite.fly();
 			} 
-			else if(value.equalsIgnoreCase("TIRANGA")) {
-				Kite kite = new Kite(value, 1000);
-				kite.fly();
-			} 
 			else {
 				Kite kite = new Kite("UNKNOWN",10,"UNKNOWN OWNER");
 				kite.fly();
@@ -49,18 +45,13 @@ class Kite
 		length = len;
 		owner = own;
 	}
-	Kite(String col, int len) {
-		color = col; //local variables
-		length = len;
-		owner = "Narendra Modi";
-	}
-	
 	Kite(int len, String own) {
 		color = "BLACK"; //default
 		length = len;
 		owner = own;
 	}
 	
+
 	void fly() {
 		System.out.println(owner+" is flying a "+color+" color kite of length "+length+" meters");
 	}

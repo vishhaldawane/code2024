@@ -1,0 +1,13 @@
+
+public class InheritanceTest {
+	public static void main(String[] args) {
+		P p = new P();
+		
+	}
+}
+class P
+{
+	P() {
+		System.out.println("P ctor...");
+	}
+}

@@ -1,0 +1,40 @@
+
+public class ConstructorTest {
+	public static void main(String[] args) {
+		
+		Kite kite1 = new Kite("Green",50,"Preksha");
+		Kite kite2 = new Kite("Pink",54,"Ayushi");
+		Kite kite3 = new Kite("Yellow",57,"Suhana");
+		Kite kite4 = new Kite("Red",59,"Ruchika");
+
+		kite1.fly();
+		kite1.fly();
+		kite1.fly();
+		kite1.fly();
+		
+		
+		
+	}
+}
+class Kite
+{
+	private String color;
+	private int length;
+	private String owner;
+	
+	
+	//initialize the data [ fields ]
+	Kite(String col, int len, String own) {
+		color = col; //local variables
+		length = len;
+		owner = own;
+	}
+
+	void fly() {
+		System.out.println(owner+" is flying a "+color+" color kite of length "+length+" meters");
+	}
+	
+}
+
+
+

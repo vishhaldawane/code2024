@@ -1,0 +1,62 @@
+import java.util.*;
+
+public class ConstructorTest {
+	public static void main(String[] args) {
+		
+		String answer="no";
+		
+		do
+		{
+			System.out.println("What is the kite color : ");
+			Scanner scanner= new Scanner(System.in);
+			String value = scanner.next();
+			
+			if(value.equalsIgnoreCase("WHITE")) {
+				Kite kite = new Kite(value, 100, "Vishhal");
+				kite.fly();
+			}
+			else if(value.equalsIgnoreCase("BLACK")) {
+				Kite kite = new Kite(100, "Jack");
+				kite.fly();
+			} 
+			else {
+				Kite kite = new Kite("UNKNOWN COLOR",10,"UNKNOWN OWNER");
+				kite.fly();
+			}
+			
+			System.out.println("Continue the loop ? ");
+			Scanner scanner2= new Scanner(System.in);
+			answer = scanner2.next();
+			
+		}while( answer.equalsIgnoreCase("yes"));
+		
+	}
+}
+class Kite
+{
+	private String color;
+	private int length;
+	private String owner;
+	
+	
+	//initialize the data [ fields ]
+	Kite(String col, int len, String own) {
+		color = col; //local variables
+		length = len;
+		owner = own;
+	}
+	Kite(int len, String own) {
+		color = "BLACK"; //default
+		length = len;
+		owner = own;
+	}
+	
+
+	void fly() {
+		System.out.println(owner+" is flying a "+color+" color kite of length "+length+" meters");
+	}
+	
+}
+
+
+

@@ -8,7 +8,7 @@ public class PersonTest {
 		persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
 		persona.showPerson();
 		
-		System.out.println("============================================");
+		System.out.println("=================");
 	
 		Student student = new Student('F',20,"Seema",5566,"Bharathi Vidyapeeth","MCA",'A');
 		student.adhaar.setAdhaarCard("888812349999", "Seema Agarwal", "Vashi", "7722997766", LocalDate.of(2003, 04, 29));
@@ -16,7 +16,7 @@ public class PersonTest {
 
 		student.showStudent();
 	
-		System.out.println("============================================");
+		System.out.println("=================");
 		
 		Employee employee = new Employee('F',21,"Julie",1166,"Vidyalankar","BCA",'A', 1155,"IT","Developer",55000);
 		employee.adhaar.setAdhaarCard("444412347777", "Julie D'mello", "Airoli", "3322991166", LocalDate.of(2004, 05, 30));

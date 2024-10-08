@@ -1,98 +1,28 @@
-import java.time.LocalDate;
 
 public class PersonTest {
 	public static void main(String[] args) {
 		
 		Person persona = new Person('F',20,"Ruchika");
-		persona.adhaar.setAdhaarCard("123412341234", "Ruchika Jamwal", "CBD Belapur", "9822997766", LocalDate.of(2002, 03, 19));
-		persona.pan.setPanCard("RUTRY4536A", "Arun Jamwal");
 		persona.showPerson();
 		
-		System.out.println("============================================");
+		System.out.println("=================");
 	
 		Student student = new Student('F',20,"Seema",5566,"Bharathi Vidyapeeth","MCA",'A');
-		student.adhaar.setAdhaarCard("888812349999", "Seema Agarwal", "Vashi", "7722997766", LocalDate.of(2003, 04, 29));
-		student.pan.setPanCard("SOPER1136P", "Satish Agarwal");
-
 		student.showStudent();
 	
-		System.out.println("============================================");
+		System.out.println("=================");
 		
 		Employee employee = new Employee('F',21,"Julie",1166,"Vidyalankar","BCA",'A', 1155,"IT","Developer",55000);
-		employee.adhaar.setAdhaarCard("444412347777", "Julie D'mello", "Airoli", "3322991166", LocalDate.of(2004, 05, 30));
-		employee.pan.setPanCard("JRTQW2233Q", "Simon D'mello");
-
 		employee.showEmployee();
 	
 	}
 }		
-
-class AdhaarCard
-{
-	private String adhaarNumber; //12 digit
-	private String fullName;
-	private String address;
-	private String phoneNumber;
-	private LocalDate birthDate; //java.time
-	
-	public void setAdhaarCard(String adhaarNumber, String fullName, String address, String phoneNumber, LocalDate birthDate) {
-		
-		this.adhaarNumber = adhaarNumber;
-		this.fullName = fullName;
-		this.address = address;
-		this.phoneNumber = phoneNumber;
-		this.birthDate = birthDate;
-	}
-	
-	void showAdhaarCard() {
-		System.out.println("--Adhaar Details---");
-		System.out.println("Adhaar Number : "+adhaarNumber);
-		System.out.println("Adhaar Name   : "+fullName);
-		System.out.println("Adhaar Address: "+address);
-		System.out.println("Adhaar Phone  : "+phoneNumber);
-		System.out.println("Adhaar DOB    : "+birthDate);
-		System.out.println("----------------------");
-	}
-	
-	
-	
-}
-
-
-class PanCard
-{
-	private String panNumber; //12 digit
-	private String fatherName;
-	
-	
-	
-	public void setPanCard(String panNumber, String fatherName) {
-		
-		this.panNumber = panNumber;
-		this.fatherName = fatherName;
-	}
-
-
-
-	void showPanCard() {
-		System.out.println("--Pan Details---");
-		System.out.println("Pan    Number : "+panNumber);
-		System.out.println("Father Name   : "+fatherName);
-		System.out.println("----------------------");
-	}
-	
-	
-	
-}
-
 class Person
 {
 	
-	private char gender; //1 hasA
-	private int age;		//2 hasA
-	private String name;	//3 hasA
-	AdhaarCard adhaar = new AdhaarCard(); //4 hasA - empty One
-	PanCard pan = new PanCard();
+	private char gender;
+	private int age;
+	private String name;
 	
 	public Person(char gender, int age, String name) {
 		super();
@@ -108,8 +38,7 @@ class Person
 		System.out.println("Age    : "+age);
 		System.out.println("Name   : "+name);
 		System.out.println("-------------------------");
-		adhaar.showAdhaarCard();
-		pan.showPanCard();
+		
 	}
 
 	public char getGender() {
@@ -178,6 +107,8 @@ class Employee extends Student //isA
 	String designation;
 	float salary;
 	
+	
+	
 	public Employee(char gender, int age, String name, int rollNumber, String collegeName, String stream, char grade,
 			int empNumber, String department, String designation, float salary) {
 		super(gender, age, name, rollNumber, collegeName, stream, grade);
@@ -186,6 +117,9 @@ class Employee extends Student //isA
 		this.designation = designation;
 		this.salary = salary;
 	}
+
+
+
 	void showEmployee()
 	{
 		super.showStudent();

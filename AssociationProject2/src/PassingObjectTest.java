@@ -4,20 +4,26 @@
 //stationary - Account, Pen, SketchPen, Table
 public class PassingObjectTest {
 	public static void main(String[] args) {
+		//good better best
 		
-		Curd curd1 = new Curd("Thick","Sour","Buffalow",500);
+		Curd curd1 = new Curd("Thickest","Sour","Buffalow",500);
+		Sugar sugar = new Sugar("Organic","Brown",150);
+		Ice ice = new Ice("Bisleri","Cubes",1);
+		
 		System.out.println("density of curd1 "+curd1.getDensity());
+		System.out.println("main : curd1 : "+curd1.hashCode());
 		
 		System.out.println(" -------- ");
+		
 		Chef chef = new Chef();
+		//Lassi Chef.cook(Curd curd2, Sugar sugar, Ice ice)
+
+		Lassi myLassi = chef.cook(curd1, sugar, ice);
 		
-		chef.cook(curd1);
-		
+		System.out.println("my lassi : "+myLassi);
 		System.out.println(" -------- ");
 
-		
 		System.out.println(" back to main ");
-		
 		System.out.println("density of curd1 "+curd1.getDensity());
 		
 	}
@@ -25,12 +31,36 @@ public class PassingObjectTest {
 class Chef extends Person //isA
 {
 	
-	void cook(Curd curd2)
+			//usesA		usesA			usesA
+	Lassi cook(Curd curd2, Sugar sugar, Ice ice)//curd2 = curd1
 	{
 		System.out.println("Chef is cooking something...");
+
 		System.out.println("Chef is using Curd of "+curd2.getSource()+" milk");
-		curd2.setDensity("thin");
-		System.out.println("curd2 density "+curd2.getDensity());
+		System.out.println("Chef is adding "+sugar.getType()+" sugar of "+sugar.getColor()+" color of quantity "+sugar.getQuantity()+" gms");
+		System.out.println("Chef is also adding "+ice.getQuantity()+" "+ice.getShape()+" ice of "+ice.getSource()+" brand ");
+		System.out.println("Blending started.....");
+		
+		int sweetLevel=0;
+		
+		if(
+			(curd2.getQuantity()>=500 && curd2.getQuantity()<=600)	
+				&& 
+			(sugar.getQuantity() >=100 && sugar.getQuantity()<=150 )
+		) {
+			sweetLevel=8;
+		}
+		else if(
+				(curd2.getQuantity()>=500 && curd2.getQuantity()<=600)	
+						&& 
+				(sugar.getQuantity() >=1 && sugar.getQuantity()<=10 )
+			 )
+		{
+			sweetLevel=2;
+		}
+
+		Lassi lassiObj = new Lassi("Thicker",sweetLevel,600,5.0f);
+		return lassiObj;
 	}
 }
 
@@ -240,8 +270,7 @@ class Lassi
 /*
  * 
  * 
- * 	Sugar sugar = new Sugar("Organic","Brown",100);
-		Ice ice = new Ice("Bisleri","Cube",15);
+ * 	
 		
 		Chef chef = new Chef();
 		chef.cook(curd, sugar, ice);

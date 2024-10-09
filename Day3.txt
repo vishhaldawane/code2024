@@ -1,0 +1,665 @@
+
+
+
+			Java Foundation Course
+
+					- with Vishhal
+
+
+			Java Programming Language
+					|		|
+					|		listen speak reading write
+					|		2 ear  1 mouth 2 eye  2 hands
+					|		<--concepts---><--programs--->
+					|
+				set of instructions
+
+
+			lecture
+			reading
+			audio/visuals
+			demo
+			discuss
+			practice<---
+			teaching 
+
+thoughts  = invisible = faster than light 
+
+question = reply 
+
+						who
+						|? student-cum-employee
+					-------------
+					|		|
+					where	when
+					|place	|2024|Oct|7
+					|		|				dasha <-state
+				----------------------------
+				|			|		|
+				why			what		how <--code
+				REASON	inFORMation implemetation [apply]
+
+
+
+
+	clock <---- intention 
+	compass <-- disha
+
+M 7th <==
+T 8
+W 9
+T 10
+F 11
+
+S 12
+S 13
+
+M 14
+T 15
+W 16
+T 17
+F 18
+
+S 19
+S 20
+
+M 21st 
+
+
+
+
+
+ Begin with the END in Mind
+
+
+
+class SavingsAccount
+{
+	float balance;
+
+	void withdraw(float amt)
+	{
+		balance = balance - amt;
+	}
+
+}
+
+Server Machine										database
+	|	|										| hibernate JPA
+	|	SavingsAccount sa = new SavingsAccount(101,"Julie",5000);
+	|						withdraw(3000);
+	| spring
+	|
+AtmMachine1		atm2			atm3
+	|
+	screen
+	<-- put her card
+	<-- authenticate <-- pin
+	<-- screen to interact
+	withdraw<-	pin change
+	statement		cheque book
+
+
+
+					Java Technology
+						|
+			---------------------------------
+			|			|			|
+			JSE			JEE			JME
+			desktop		enterprise
+			CORE				|		
+		lang fundas		---------------
+		oops 			|			|
+		packages			WEB			EJB
+		exceptions					enterprise java bean [ class ]
+		generics						|
+		collections			-----------------------
+		file i/o				|		|		|
+		jdbc					stateless	statefull	message
+		|
+		adv java
+		networking
+		RMI
+
+Enterprise application
+------------------------
+1. Remote Capability
+	socket programming
+			Socket sock = new Socket();
+			Account acc = new Account(101,"Julie",5000);
+
+2. High Availability
+	24 x 7 
+	clustering 
+
+3. Multithreading
+		100s, 1000s, 100000..
+		Thread t1 = new Thread();
+		Thread t2 = ....
+	
+4. Pooling of resources
+		empty shopping carts
+
+5. Caching of resources
+
+6. Transaction management
+			ACID properties
+7. Security management
+		encrypted /TLS / https
+	
+c:\>  notepad First.java
+minimum unit of coding in java is to write a CLASS
+
+
+First.java
+-------------
+class Greeting 
+{
+	public static void main(String args[])
+	{
+
+	}
+}
+----------------
+Circus.java
+------------
+public class Joker
+{
+
+}
+public class RingMaster
+{
+}
+------
+
+javac is the java compiler
+
+
+javac First.java
+		|
+		- from this file many .class files would be generated
+		- well what would be the name of these files?
+		- depending upon the number of classes declared therein
+
+	which class would run?
+		the one which has main method!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. class name can be anyname
+2. if the class is public, then only one public class is allowed
+	per file
+3. the public class MUSt be saved in its own file
+4. if the class has a main function, then it can be EXECUTED
+
+
+
+
+
+Naming Conventions
+---------------------
+class SavingsAccount
+{
+	private int accountNumber;
+	private String accountHolderName;
+	private double accountBalance;
+
+	
+}
+
+
+	1. ClassName
+		should not start with number
+		no spaces
+		can have $ sign
+		follow PascalCase
+
+		DriverManager - valid
+
+		driverManager - invalid
+
+		Driver Manager - invalid
+
+		0DriverManager - invalid
+
+	2. methodName - functionName
+
+		void setLookAndFeel() {
+
+		}
+
+		void SetLookAndFeel() // invalid
+
+		
+	3. fieldName - variableName
+		
+			long socialSecurityNumber=123;
+
+			long SocialSecurityNumber; //invalid
+
+	4. CONSTANT - IMMUTABLE 
+
+			final long SPEED_OF_LIGHT=186000.519; //m/s
+
+				SPEED_OF_LIGHT
+
+	5. packages 
+			java.lang
+			java.awt.event
+
+
+
+
+
+
+			
+
+
+
+	2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. You make a folder / project
+2. make a .java file - with main method
+3. make another .java file - which has your logic/learnings
+
+e.g.
+
+			c:
+			|
+			CG2024
+			|
+	----------------------------
+	|					|
+	BankTest.java		SavingsAccount.java
+	|					|
+	main				acno,name,balance
+					withdraw() / deposit()
+
+public class BankTest		public class SavingsAccount
+{						{
+	main() {					private acno,name,bal;
+								withdraw() / deposit()
+		SavingsAccount sa = 
+			new SavingsAccount();
+		sa.withdraw();
+		sa.deposit()
+	}
+}
+
+
+
+Class					vs			Object
+|									|
+design of the object			instance of a class
+blueprint of a house			actual house(es)
+logical						physical
+
+BankAccount bankAccountObjRef1 = 
+			new BankAccount(101,"Julie",5000);
+
+
+		stack						heap ( free store )
+
+		
+					BankAccount
+					<----------------FIELD AREA------------->
+					accountNumber  accountHolder	accountBalance
+					+---------------------------------------+
+					|101			|Julie		|5000	|
+					+---------------------------------------+
+		+------------->100
+		|
+		100				METHOD AREA : BankAccount(...)
+	bankAccountObjRef1			11 methods inherited : Object
+
+
+
+Association Principal
+-----------------------
+
+		isA
+
+		hasA
+
+
+		usesA
+
+		producesA
+
+
+	class Machine { }
+
+	class WashingMachine extends Machine { //isA
+
+
+		WashingTub washTub = new WashingTub();//hasA
+
+					//usesA	usesA		usesA	usesA
+			Laundry wash(Water w, Electricity e, Cloth c, Detergent d)
+			{
+				..
+				..
+				Laundry laundry = new Laundry();
+				return laundry; //producesA
+			}	
+
+			void rinse() 
+			{
+
+			}
+			void spin()
+			{
+
+			}
+
+	}
+
+
+	class Machine { }
+
+
+	class MicroWave extends Machine
+	{
+		HeatingCoil coil = new HeatingCoil(); //hasA
+
+			Cake bake(Batter b )
+			{
+			
+			}
+			RoastedPapad bake(Papad p)
+			{
+			}
+			
+	}
+
+	class Photographer extends Person
+	{
+			Camera cam = new Camera();
+
+			Photo click(Scene s)
+			{
+				cam.zoomIn();
+				cam.pressButton();
+				Photo p = new Photo();
+				return p;
+			}
+	}
+
+	class Kitchen extends Room 
+	{
+		Stove stove = new Stove();
+		
+			Tea cook(Water w,Milk m, Sugar s, TeaPowder tp, Ginger g )
+			{
+				...
+					....
+				Tea t = new Tea();
+				return t;
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+OOPS
+------
+1. Abstraction
+
+	-	it is the "what is?" part of an object
+	-	hiding complexities of an object
+	-	providing simplicity of an object by
+			accessible (public) functions
+
+		a. data abstraction
+				- how much cash inside atm? 
+				- how many customers hit it ?
+
+		b. procedural abstraction
+				- login , logout procedure hidden from us
+				- camera recording
+				- security measures		
+
+		c. class abstraction
+				[ data + functions ]
+
+			- to withdraw physical money notes
+		
+			unknown to the user of the ATM
+
+2. Encapsulation
+
+		it is the "how is it?" part of an object
+
+		- dirty technical details of the ATM known to the
+		ATM engineer
+
+		- BINDING OF DATA AND CONCERNED FUNCTIONS TOGETHER
+		INSIDE A CLASS [ PRIVATE DATA + PUBLIC FUNCTIONS ]
+
+3. Polymorphism
+
+		ability of a business entity to have multiple forms
+
+
+		a. class extension
+		
+				Doctor
+				  |
+			--------------
+			|
+			Surgeon
+			|
+		--------------
+		|
+	HeartSurgeon
+
+					Book
+					|
+			----------------------------
+			|			|		|
+		   AudioBook		PDF		TextBook
+		
+				BankAccount
+					|
+			--------------------------------------
+			|			|			|
+		SavingsAccount	CurrentAccount	CreditCardAccount
+			|
+		FixedDepositAccount
+
+
+		b. method overloading
+			ability of a function to be REDEFINED with the
+			same name
+			but differentiated on the following terms
+				i) type of arguments
+				ii) number of arguments
+				iii) sequence of types of arguments
+
+		class Phone {
+			void dial() {
+			}
+			void dial(int intercomm){
+			}
+			void dial(String name) {
+			}
+			void dial(String name,String name2){
+				sop("dialing to "+name1+" and "+ name2);
+			}
+			void dial(int countryCode, long phoneNumber){
+			}
+			void dial(long phoneNumber, int countryCode){
+			}
+		}
+		class PhoneTest{
+			public static void main(String args[]){{
+				Phone phone = new Phone();
+				phone.dial();phone.dial(103);
+	phone.dial("Mahendra"); phone.dial(91,9820443464L);
+				phone.dial("Mahendra","Sachin");
+			}
+		}
+
+		c. method overriding
+		e. operator overloading
+
+
+
+4. Inheritance
+
+
+		Acquiring properties from existing business entities
+
+		class A // A is the super class
+		{
+		}
+		class B extends A // B is the sub class
+		{
+		}
+
+
+
+		a. single level
+			A
+			|
+			B
+
+
+		b. multi-level
+
+			A
+			|
+			B
+			|
+			C
+
+		c. multiple level
+			
+	class->	A		B <--interface
+			|		|
+			-----------
+				|
+		    class C extends A implements B
+			{
+
+			} 
+
+
+
+
+
+	------------------------------------------------------
+				field		method		class
+	------------------------------------------------------
+	
+	final		CONSTANT		cannot be		cannot be
+							overridden	extended
+	------------------------------------------------------
+	
+	static
+
+	------------------------------------------------------
+	abstract
+
+	------------------------------------------------------
+
+1 void clear(void)
+2 void goto(int,int)
+3 float avg(int,int,int)
+4 float answer()
+-----------------------
+1 exclusive
+2 inherited
+3 inherited-cum-overridding
+4 implemented
+
+class A
+{
+	void fun() { } //1. exclusive
+}
+class B extends A
+{
+	void foo(){ } // 1. exclusive
+}
+interface X {
+  void far();
+}
+class C extends A imlements X
+{
+	void foo()
+	{
+	}
+	public void far() {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

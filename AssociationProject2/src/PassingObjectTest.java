@@ -30,19 +30,17 @@ public class PassingObjectTest {
 }
 class Chef extends Person //isA
 {
+	// vishalviniing@gmail.com
 	
 			//usesA		usesA			usesA
 	Lassi cook(Curd curd2, Sugar sugar, Ice ice)//curd2 = curd1
 	{
 		System.out.println("Chef is cooking something...");
-
 		System.out.println("Chef is using Curd of "+curd2.getSource()+" milk");
 		System.out.println("Chef is adding "+sugar.getType()+" sugar of "+sugar.getColor()+" color of quantity "+sugar.getQuantity()+" gms");
 		System.out.println("Chef is also adding "+ice.getQuantity()+" "+ice.getShape()+" ice of "+ice.getSource()+" brand ");
 		System.out.println("Blending started.....");
-		
-		int sweetLevel=0;
-		
+		int sweetLevel=0;	
 		if(
 			(curd2.getQuantity()>=500 && curd2.getQuantity()<=600)	
 				&& 

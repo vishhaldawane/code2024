@@ -595,7 +595,9 @@ OOPS
 							overridden	extended
 	------------------------------------------------------
 	
-	static
+	static		sharing single
+				copy across
+				multiple objs
 
 	------------------------------------------------------
 	abstract

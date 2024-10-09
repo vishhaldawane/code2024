@@ -2,72 +2,35 @@
 
 //transitory - Person, Artist, GraphicDesigner, Magician
 //stationary - Account, Pen, SketchPen, Table
-
 public class PassingObjectTest {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		//Lassi lassi = new Lassi("Thick",8,250,5.0f);
-		
-		//System.out.println("lassi is "+lassi);
 		
 		Curd curd1 = new Curd("Thick","Sour","Buffalow",500);
-		Curd curd2 = curd1;
+		System.out.println("density of curd1 "+curd1.getDensity());
 		
-		System.out.println("curd1  : "+curd1.hashCode());
-		System.out.println("curd2  : "+curd2.hashCode());
+		System.out.println(" -------- ");
+		Chef chef = new Chef();
 		
-		System.out.println("curd1 "+curd1);
+		chef.cook(curd1);
 		
-		System.out.println("changing the quantity...");
-		curd2.setQuantity(600);
-		System.out.println("quantity changed....");
+		System.out.println(" -------- ");
+
 		
-		System.out.println("curd1 "+curd1);
-		System.out.println("curd2 "+curd2);
+		System.out.println(" back to main ");
 		
-		
-		Curd curd3 = curd2;
-		
-		System.out.println("changing the thickness...");
-		curd3.setDensity("thin");
-		System.out.println("thickness changed....");
-		
-		System.out.println("curd1 "+curd1);
-		System.out.println("curd2 "+curd2);
-		System.out.println("curd3 "+curd3);
-		
+		System.out.println("density of curd1 "+curd1.getDensity());
 		
 	}
-
-}
-
-
-
-
-
-
-/*
- * 
- * 
- * 	Sugar sugar = new Sugar("Organic","Brown",100);
-		Ice ice = new Ice("Bisleri","Cube",15);
-		
-		Chef chef = new Chef();
-		chef.cook(curd, sugar, ice);
- */
-class Person
-{
-	
 }
 class Chef extends Person //isA
 {
 	
-	void cook(Curd curd, Sugar sugar, Ice ice)
+	void cook(Curd curd2)
 	{
 		System.out.println("Chef is cooking something...");
-		System.out.println("Chef is using Curd of "+curd.getSource()+" milk");
+		System.out.println("Chef is using Curd of "+curd2.getSource()+" milk");
+		curd2.setDensity("thin");
+		System.out.println("curd2 density "+curd2.getDensity());
 	}
 }
 
@@ -274,9 +237,28 @@ class Lassi
 }
 
 
+/*
+ * 
+ * 
+ * 	Sugar sugar = new Sugar("Organic","Brown",100);
+		Ice ice = new Ice("Bisleri","Cube",15);
+		
+		Chef chef = new Chef();
+		chef.cook(curd, sugar, ice);
+ */
 
 
 
 
+class Person
+{
+	
+}
 
+//TODO Auto-generated method stub
+
+		//Lassi lassi = new Lassi("Thick",8,250,5.0f);
+		
+		//System.out.println("lassi is "+lassi);
+		
 

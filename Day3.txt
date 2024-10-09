@@ -595,9 +595,9 @@ OOPS
 							overridden	extended
 	------------------------------------------------------
 	
-	static		sharing single
-				copy across
-				multiple objs
+	static		sharing single	 it refers
+				copy across	 other static
+				multiple objs	 members
 
 	------------------------------------------------------
 	abstract
@@ -649,7 +649,13 @@ class C extends A imlements X
 
 	
 
+	static data members		vs		non-static data members
+	|							|
+	kiteCount						owner
+								color
+								length
 
+	referred via the ClassName		object reference 
 
 
 

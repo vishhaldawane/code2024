@@ -1,7 +1,12 @@
+import java.util.Scanner;
 
 public class StaticTest {
 	public static void main(String[] args) {
 		
+			Scanner scan = new Scanner(System.in);
+			int count = scan.nextInt();
+			Kite.setKiteCount(count);
+			
 			Kite.printKiteCount();
 			
 			Kite kite1 = new Kite("Red", 100, "Vishhal");
@@ -53,6 +58,10 @@ class Kite
 		
 		
 	}
+	public static void setKiteCount(int kiteCount) {
+		System.out.println("Setting the initial value of kiteCount as "+count);
+		this.kiteCount = kiteCount;
+	}//Cannot use this in a static context
 	
 	//TO ACCESS TEH OTHER STATIC MEMBERS
 	public  static void printKiteCount()
@@ -62,9 +71,9 @@ class Kite
 	
 	
 	//initialize the data [ fields ]
-	Kite(String col, int len, String own) {
+	Kite(String color, int len, String own) {
 		//System.out.println("Kite created...");
-		color = col; //local variables
+		this.color = color; //local variables
 		length = len;
 		owner = own;
 		++kiteCount;

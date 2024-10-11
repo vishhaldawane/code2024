@@ -35,8 +35,6 @@ public class StringBuilderStringBufferTest {
 		System.out.println("now : str3  : "+str3);
 		System.out.println("now : str3  : "+str3.hashCode());
 		
-		
-		
 		System.out.println("str1  : "+str1);
 		System.out.println("str1  : "+str1.hashCode());
 		

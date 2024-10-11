@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="AudioBook"/>
-    <fullyQualifiedTypeName name="java.time.LocalDate"/>
-    <fullyQualifiedTypeName name="Water"/>
-    <fullyQualifiedTypeName name="TeaPowder"/>
-    <fullyQualifiedTypeName name="java.util.Scanner"/>
-</qualifiedTypeNameHistroy>

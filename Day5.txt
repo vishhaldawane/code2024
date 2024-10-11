@@ -955,7 +955,12 @@ ArrayIndexOutOfBoundsException   StringIndexOutOfBoundsException
 		{
 			sop - insufficient balance
 		}
+		finally
+		{
+			sop("bound to run regardless of the exception");
+			//close some resources opened by the try block
 
+		}
 
 
 User defined exceptions | custom exceptions
@@ -984,7 +989,66 @@ User defined exceptions | custom exceptions
 
 
 
+Assignment
+------------
+1. Association Example
+	created by you in the previous lecture
 
+	cook function should be recreated 
+	with exception handling logic around it
+	2 checked
+	2 unchecked
+
+			Lassi cook(Water w, Curd curd, ... .. ..) throws SourCurdException, IceCubeNotReadyException
+			{
+
+				SourCurdException ex = new SourCurdException();
+
+				if...
+				BlenderException ex = new BlenderException("Power is down");
+					throw ex;
+
+				if ...		
+					WateryLassiException ex = new WaterLassiException....
+					
+				IceCubeNotReadyException ex = new IceCubeNotReadyException();
+				return ex;
+			}
+
+
+
+
+Packages
+-----------
+
+
+
+			packages = similar to directories
+
+
+			store classes in the relevant folders
+
+					java
+					|
+			---------------------------------------
+			|			|		|		|
+			lang			awt		sql		net
+			|			|		|		|
+			Object		Frame	Driver	Socket
+			System				DriverManager
+			Thread				ResultSet
+			Exception
+
+
+	main-folder-->		  jungle <--- main package
+						|
+			---------------------------------
+			|		 |		|		|
+folders --->	cave		river	tree		farm <-- sub-packages
+			|		 |		|		|
+			Tiger	 Frog	Parrot	House <-- classes
+			WhiteTiger Fish	Monkey	FarmHouse
+			BengalTiger		Chimp
 
 
 

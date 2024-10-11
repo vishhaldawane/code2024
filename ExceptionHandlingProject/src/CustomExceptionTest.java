@@ -13,20 +13,20 @@ public class CustomExceptionTest {
 			myCar.drive(); ////this line is susceptible to throw runtime exception
 		}
 		catch(SpeedLimitException e) { //dedicate this part for SpeedLimit
-			System.out.println("Problem1  : "+e);
+			System.out.println("Problem1  : "+e.getMessage());
 			
 		}
 		catch(RedSignalDishonouredException e) { // dedicate this part for BumberException
-			System.out.println("Problem2  : "+e);
+			System.out.println("Problem2  : "+e.getMessage());
 			
 		}
 		catch(BumperException e) { //dedicate this to red signal dishonoured exception
 			
-			System.out.println("Problem3  : "+e);
+			System.out.println("Problem3  : "+e.getMessage());
 			
 		}
 		catch(Exception e) { //Doctor d = new Surgeon()
-			System.out.println("Problem1  : "+e);
+			System.out.println("Problem1  : "+e.getMessage());
 		}
 		
 		

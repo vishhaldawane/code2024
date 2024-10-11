@@ -6,11 +6,11 @@ public class ExceptionTest {
 		System.out.println("Begin main"); //1
 		
 		int x = 10; //2
-		int y = 8; //3
+		int y = 0; //3
 		System.out.println("x "+x); //4
 		System.out.println("y "+y); //5
 		
-		if(y != 0 ) //if the denominator is not ZERO
+		try
 		{
 			System.out.println("Trying to divide "+x+" by "+y); //6
 		
@@ -24,9 +24,9 @@ public class ExceptionTest {
 			//4. and JVM would drop that Exception by terminating your application
 			System.out.println("division : "+z); //8 
 
-		}
-		else {
-			System.out.println("-- Cannot Divide BY ZERO -- ");
+		}//YES we are catching this object thrown from JVM
+		catch(ArithmeticException arithMeticExcObj) {
+			System.out.println("1 Problem found : "+arithMeticExcObj);
 		}
 		
 		
@@ -34,25 +34,35 @@ public class ExceptionTest {
 		System.out.println("----------");
 		
 		
-		int a = 10; //2
-		int b = 3; //3
-		System.out.println("a "+a); //4
-		System.out.println("b "+b); //5
-		System.out.println("Trying to divide "+a+" by "+b); //6
-		int c = a / b; //cannot divide by zero 7
-		System.out.println("division : "+c); //8 
-
+		try
+		{
+			int a = 50; //2
+			int b = 0; //3
+			System.out.println("a "+a); //4
+			System.out.println("b "+b); //5
+			System.out.println("Trying to divide "+a+" by "+b); //6
+			int c = a / b; //cannot divide by zero 7
+			System.out.println("division : "+c); //8 
+		}
+		catch(ArithmeticException ex) {
+			System.out.println("2 Problem Found : "+ex);
+		}
+		
 		System.out.println("----------");
 		
-		int p = 10; //2
-		int q = 7; //3
-		System.out.println("p "+p); //4
-		System.out.println("q "+q); //5
-		System.out.println("Trying to divide "+p+" by "+q); //6
-		int r = p / q; //cannot divide by zero 7
-		System.out.println("division : "+r); //8 
-
-		
+		try
+		{
+			int p = 90; //2
+			int q = 0; //3
+			System.out.println("p "+p); //4
+			System.out.println("q "+q); //5
+			System.out.println("Trying to divide "+p+" by "+q); //6
+			int r = p / q; //cannot divide by zero 7
+			System.out.println("division : "+r); //8 
+		}
+		catch(ArithmeticException e) {
+			System.out.println("3 Problem found : "+e);
+		}
 		
 		System.out.println("End main"); //9
 		

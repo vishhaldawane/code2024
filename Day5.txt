@@ -880,7 +880,7 @@ during your JOURNEY (travel) + on the road
 			-----------------------
 				|
 			Throwable
-				|
+				| every object of this can be thrown 
 			----------------------
 			|			| 
 			Error		Exception <-1 - can be caught in the catch

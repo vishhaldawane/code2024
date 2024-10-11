@@ -957,6 +957,49 @@ ArrayIndexOutOfBoundsException   StringIndexOutOfBoundsException
 		}
 
 
+
+User defined exceptions | custom exceptions
+---------------------------
+
+
+
+		first decide the TYPE of the exception
+
+				checked? Yes, then extend Exception class
+
+				OR
+
+				unchecked? Yes, then extend RuntimeException
+
+
+		//UNCHECKED
+		class SpeedLimitException extends RuntimeException
+		{
+		}
+
+		//CHECKED
+		class CarKeyNotFoundException extends Exception 
+		{
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	
 
 

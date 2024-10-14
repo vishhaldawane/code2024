@@ -1,7 +1,7 @@
 package jungle.farm;//House belongs to this folder
 
 import jungle.cave.Tiger; //to avail it here
-import jungle.cave.ButterFly;
+
 //The type jungle.cave.ButterFly is not visible
 public class House {
 	public static void main(String[] args) {

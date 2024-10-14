@@ -1061,6 +1061,73 @@ public class Tiger
 
 }
 
+----------------------------------------------------------------
+
+COLLECTIONS
+------------
+
+
+				Iterable <-- interface
+					|4
+				Collection <--interface
+					|5
+					|add(); <--declared
+			---------------------
+			|			|
+			List			Set <-- interfaces
+			|duplicates	|unique
+			|6			|8
+		------------	 ------------
+		|		|	  |		|
+	ArrayList LinkedList TreeSet	HashSet <-- containers	
+	add(){}	add(){}	add(){}	add(){}
+
+
+		Iterator = step through the collection to access the
+			elements/contents of the collection
+		so that Algorithms can function
+
+Co-creators
+
+		 <--- drink() <-- Algorithm
+		||
+		|| <--- Iterator (Straw)
+	|	||	|
+	|----||----|
+	|		|
+	|	<------------Content (ButterMilk)
+	|		|
+	|		|<--- Container <-- Glass
+	|		|
+	+---------+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

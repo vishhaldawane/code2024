@@ -12,6 +12,10 @@ public class CustomExceptionTest {
 			myCar = new Car("BMW"); //this line is susceptible to throw runtime exception
 			myCar.drive(); ////this line is susceptible to throw runtime exception
 		}
+		
+		
+		//Unreachable catch block for SpeedLimitException. 
+		//It is already handled by the catch block for Exception
 		catch(SpeedLimitException e) { //dedicate this part for SpeedLimit
 			System.out.println("Problem1  : "+e.getMessage());
 			
@@ -23,6 +27,9 @@ public class CustomExceptionTest {
 		catch(BumperException e) { //dedicate this to red signal dishonoured exception
 			
 			System.out.println("Problem3  : "+e.getMessage());
+			
+		}
+		catch(RuntimeException e) {
 			
 		}
 		catch(Exception e) { //Doctor d = new Surgeon()

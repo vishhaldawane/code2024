@@ -18,8 +18,7 @@ public class Tiger {
 	}
 }
 //II. same package, no sub class
-class ButterFly
-{
+class ButterFly{
 	void fly() {		
 		Tiger tiger = new Tiger();
 		tiger.jump();	 //its not public 
@@ -29,12 +28,9 @@ class ButterFly
 		System.out.println(tiger.pub);
 	}
 }
-
 //III. same package - sub class
-class WhiteTiger extends Tiger
-{
-	public void jump(Tiger t)
-	{
+class WhiteTiger extends Tiger{
+	public void jump(Tiger t){
 		System.out.println(pri);
 		System.out.println(def);
 		System.out.println(pro);

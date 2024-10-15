@@ -1149,6 +1149,58 @@ Similarly
 
 
 
+File handling
+----------------------
+stream = flow
+
+		reading = input = read from file
+		writing = output = write to the file
+
+				
+		System.in						System.out
+		|								|
+		keyboard		Java Program		Monitor
+standard in	|			|				| standard out
+			------->--------------->-----------+-	
+						|
+				output	|
+				-<-<-<---------- output
+				|| input  |	-->-->-->-|
+				||		|	   input
+				||->->->--|	 <--<--<-	|
+				||		|			|
+				file		memory	network 
+		
+				
+
+	byte based stream					character based stream
+		1 byte as min unit				2 bytes ( 1 char) as a min
+		of reading/writing				unit of reading/writing
+			ASCII						UNICODE
+------------------------------------------------------------------------
+InputStream |	OutputStream		||  FileReader		| FileWriter
+     ------ |         ------		||    ------		|    ------
+ read()     |      write()         ||     read()       |    write()
+------------------------------------------------------------------------
+FileInputSt-|FileOutputStream		|| FileReader		| FileWriter
+ream		  |					||				|
+		  |					||				|
+		  |					||				|
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

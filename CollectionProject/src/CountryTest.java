@@ -1,6 +1,20 @@
 import java.util.Scanner;
 import java.util.TreeMap;
-
+//Hash 		vs 		Tree
+/*  |				 |
+ *HashSet   		TreeSet
+ * |Books			  ChemicalElement
+ * --------------
+ * |S	|F		|
+ * |------------|
+ * |A		|NF	|
+ * |------------|
+ * |ENG			|
+ * ---------------
+ * 
+ * HashMap(K,V)		vs		TreeMap(K,V)
+ * 
+ */
 public class CountryTest {
 	public static void main(String[] args) {
 		

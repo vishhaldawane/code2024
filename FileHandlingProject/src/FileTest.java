@@ -8,10 +8,13 @@ public class FileTest {
 		int wordCount=0;
 		int lineCount=0;
 		int letterCount=0;
-		
-		try {
+		//9820443464
+		try (FileInputStream fin = new FileInputStream("prince.txt");
+				
+				)
+		{
 			System.out.println("Trying to open a file...");
-			FileInputStream fin = new FileInputStream("prince.txt");
+		//	FileInputStream fin = new FileInputStream("prince.txt");
 			System.out.println("File is open...\n");
 			
 			byte letter=0;

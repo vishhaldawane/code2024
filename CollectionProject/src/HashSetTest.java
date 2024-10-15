@@ -1,13 +1,19 @@
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.Objects;
 
 public class HashSetTest {
 	public static void main(String[] args) {
 		Book book1 = new Book(101,"Java","James",1200,1500.0f);
-		Book book2 = new Book(102,"Oracle","Brian",1300,1300.0f);
-		Book book3 = new Book(103,"Unix","Richard",1250,1800.0f);
-		Book book4 = new Book(104,"Spring","David",1100,1200.0f);
-		Book book5 = new Book(105,"JPA","Sam",1050,900.0f);
+		Book book2 = new Book(101,"Java","James",1200,1500.0f);
+		Book book3 = new Book(101,"Java","James",1200,1500.0f);
+		
+		Book book8 = book1;
+		
+		Book book4 = new Book(102,"Oracle","Brian",1300,1300.0f);
+		Book book5 = new Book(103,"Unix","Richard",1250,1800.0f);
+		Book book6 = new Book(104,"Spring","David",1100,1200.0f);
+		Book book7 = new Book(105,"JPA","Sam",1050,900.0f);
 		
 		BookShelf shelf = new BookShelf();
 		shelf.addBookToTheShelf(book1);
@@ -15,7 +21,9 @@ public class HashSetTest {
 		shelf.addBookToTheShelf(book3);
 		shelf.addBookToTheShelf(book4);
 		shelf.addBookToTheShelf(book5);
-		
+		shelf.addBookToTheShelf(book6);
+		shelf.addBookToTheShelf(book7);
+			
 		shelf.showAllBooks();
 	}
 }
@@ -55,6 +63,22 @@ class Book
 		return "Book [bookId=" + bookId + ", bookTitle=" + bookTitle + ", bookAuthor=" + bookAuthor + ", numberOfPages="
 				+ numberOfPages + ", bookCost=" + bookCost + "]";
 	}
+	@Override
+	public int hashCode() {
+		return Objects.hash(bookId);// 
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Book other = (Book) obj;
+		return bookId == other.bookId;
+	}
+	
 	
 	
 	

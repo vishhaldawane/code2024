@@ -1,0 +1,1193 @@
+
+
+
+			Java Foundation Course
+
+					- with Vishhal
+
+
+			Java Programming Language
+					|		|
+					|		listen speak reading write
+					|		2 ear  1 mouth 2 eye  2 hands
+					|		<--concepts---><--programs--->
+					|
+				set of instructions
+
+
+			lecture
+			reading
+			audio/visuals
+			demo
+			discuss
+			practice<---
+			teaching 
+
+thoughts  = invisible = faster than light 
+
+question = reply 
+
+						who
+						|? student-cum-employee
+					-------------
+					|		|
+					where	when
+					|place	|2024|Oct|7
+					|		|				dasha <-state
+				----------------------------
+				|			|		|
+				why			what		how <--code
+				REASON	inFORMation implemetation [apply]
+
+
+
+
+	clock <---- intention 
+	compass <-- disha
+
+M 7th <==
+T 8
+W 9
+T 10
+F 11
+
+S 12
+S 13
+
+M 14
+T 15
+W 16
+T 17
+F 18
+
+S 19
+S 20
+
+M 21st 
+
+
+
+
+
+ Begin with the END in Mind
+
+
+
+class SavingsAccount
+{
+	float balance;
+
+	void withdraw(float amt)
+	{
+		balance = balance - amt;
+	}
+
+}
+
+Server Machine										database
+	|	|										| hibernate JPA
+	|	SavingsAccount sa = new SavingsAccount(101,"Julie",5000);
+	|						withdraw(3000);
+	| spring
+	|
+AtmMachine1		atm2			atm3
+	|
+	screen
+	<-- put her card
+	<-- authenticate <-- pin
+	<-- screen to interact
+	withdraw<-	pin change
+	statement		cheque book
+
+
+
+					Java Technology
+						|
+			---------------------------------
+			|			|			|
+			JSE			JEE			JME
+			desktop		enterprise
+			CORE				|		
+		lang fundas		---------------
+		oops 			|			|
+		packages			WEB			EJB
+		exceptions					enterprise java bean [ class ]
+		generics						|
+		collections			-----------------------
+		file i/o				|		|		|
+		jdbc					stateless	statefull	message
+		|
+		adv java
+		networking
+		RMI
+
+Enterprise application
+------------------------
+1. Remote Capability
+	socket programming
+			Socket sock = new Socket();
+			Account acc = new Account(101,"Julie",5000);
+
+2. High Availability
+	24 x 7 
+	clustering 
+
+3. Multithreading
+		100s, 1000s, 100000..
+		Thread t1 = new Thread();
+		Thread t2 = ....
+	
+4. Pooling of resources
+		empty shopping carts
+
+5. Caching of resources
+
+6. Transaction management
+			ACID properties
+7. Security management
+		encrypted /TLS / https
+	
+c:\>  notepad First.java
+minimum unit of coding in java is to write a CLASS
+
+
+First.java
+-------------
+class Greeting 
+{
+	public static void main(String args[])
+	{
+
+	}
+}
+----------------
+Circus.java
+------------
+public class Joker
+{
+
+}
+public class RingMaster
+{
+}
+------
+
+javac is the java compiler
+
+
+javac First.java
+		|
+		- from this file many .class files would be generated
+		- well what would be the name of these files?
+		- depending upon the number of classes declared therein
+
+	which class would run?
+		the one which has main method!!!!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. class name can be anyname
+2. if the class is public, then only one public class is allowed
+	per file
+3. the public class MUSt be saved in its own file
+4. if the class has a main function, then it can be EXECUTED
+
+
+
+
+
+Naming Conventions
+---------------------
+class SavingsAccount
+{
+	private int accountNumber;
+	private String accountHolderName;
+	private double accountBalance;
+
+	
+}
+
+
+	1. ClassName
+		should not start with number
+		no spaces
+		can have $ sign
+		follow PascalCase
+
+		DriverManager - valid
+
+		driverManager - invalid
+
+		Driver Manager - invalid
+
+		0DriverManager - invalid
+
+	2. methodName - functionName
+
+		void setLookAndFeel() {
+
+		}
+
+		void SetLookAndFeel() // invalid
+
+		
+	3. fieldName - variableName
+		
+			long socialSecurityNumber=123;
+
+			long SocialSecurityNumber; //invalid
+
+	4. CONSTANT - IMMUTABLE 
+
+			final long SPEED_OF_LIGHT=186000.519; //m/s
+
+				SPEED_OF_LIGHT
+
+	5. packages 
+			java.lang
+			java.awt.event
+
+
+
+
+
+
+			
+
+
+
+	2. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. You make a folder / project
+2. make a .java file - with main method
+3. make another .java file - which has your logic/learnings
+
+e.g.
+
+			c:
+			|
+			CG2024
+			|
+	----------------------------
+	|					|
+	BankTest.java		SavingsAccount.java
+	|					|
+	main				acno,name,balance
+					withdraw() / deposit()
+
+public class BankTest		public class SavingsAccount
+{						{
+	main() {					private acno,name,bal;
+								withdraw() / deposit()
+		SavingsAccount sa = 
+			new SavingsAccount();
+		sa.withdraw();
+		sa.deposit()
+	}
+}
+
+
+
+Class					vs			Object
+|									|
+design of the object			instance of a class
+blueprint of a house			actual house(es)
+logical						physical
+
+BankAccount bankAccountObjRef1 = 
+			new BankAccount(101,"Julie",5000);
+
+
+		stack						heap ( free store )
+
+		
+					BankAccount
+					<----------------FIELD AREA------------->
+					accountNumber  accountHolder	accountBalance
+					+---------------------------------------+
+					|101			|Julie		|5000	|
+					+---------------------------------------+
+		+------------->100
+		|
+		100				METHOD AREA : BankAccount(...)
+	bankAccountObjRef1			11 methods inherited : Object
+
+
+
+Association Principal
+-----------------------
+
+		isA
+
+		hasA
+
+
+		usesA
+
+		producesA
+
+
+	class Machine { }
+
+	class WashingMachine extends Machine { //isA
+
+
+		WashingTub washTub = new WashingTub();//hasA
+
+					//usesA	usesA		usesA	usesA
+			Laundry wash(Water w, Electricity e, Cloth c, Detergent d)
+			{
+				..
+				..
+				Laundry laundry = new Laundry();
+				return laundry; //producesA
+			}	
+
+			void rinse() 
+			{
+
+			}
+			void spin()
+			{
+
+			}
+
+	}
+
+
+	class Machine { }
+
+
+	class MicroWave extends Machine
+	{
+		HeatingCoil coil = new HeatingCoil(); //hasA
+
+			Cake bake(Batter b )
+			{
+			
+			}
+			RoastedPapad bake(Papad p)
+			{
+			}
+			
+	}
+
+	class Photographer extends Person
+	{
+			Camera cam = new Camera();
+
+			Photo click(Scene s)
+			{
+				cam.zoomIn();
+				cam.pressButton();
+				Photo p = new Photo();
+				return p;
+			}
+	}
+
+	class Kitchen extends Room 
+	{
+		Stove stove = new Stove();
+		
+			Tea cook(Water w,Milk m, Sugar s, TeaPowder tp, Ginger g )
+			{
+				...
+					....
+				Tea t = new Tea();
+				return t;
+			}
+	}
+
+
+
+
+
+
+
+
+
+
+OOPS
+------
+1. Abstraction
+
+	-	it is the "what is?" part of an object
+	-	hiding complexities of an object
+	-	providing simplicity of an object by
+			accessible (public) functions
+
+		a. data abstraction
+				- how much cash inside atm? 
+				- how many customers hit it ?
+
+		b. procedural abstraction
+				- login , logout procedure hidden from us
+				- camera recording
+				- security measures		
+
+		c. class abstraction
+				[ data + functions ]
+
+			- to withdraw physical money notes
+		
+			unknown to the user of the ATM
+
+2. Encapsulation
+
+		it is the "how is it?" part of an object
+
+		- dirty technical details of the ATM known to the
+		ATM engineer
+
+		- BINDING OF DATA AND CONCERNED FUNCTIONS TOGETHER
+		INSIDE A CLASS [ PRIVATE DATA + PUBLIC FUNCTIONS ]
+
+3. Polymorphism
+
+		ability of a business entity to have multiple forms
+
+
+		a. class extension
+		
+				Doctor
+				  |
+			--------------
+			|
+			Surgeon
+			|
+		--------------
+		|
+	HeartSurgeon
+
+					Book
+					|
+			----------------------------
+			|			|		|
+		   AudioBook		PDF		TextBook
+		
+				BankAccount
+					|
+			--------------------------------------
+			|			|			|
+		SavingsAccount	CurrentAccount	CreditCardAccount
+			|
+		FixedDepositAccount
+
+
+		b. method overloading
+			ability of a function to be REDEFINED with the
+			same name
+			but differentiated on the following terms
+				i) type of arguments
+				ii) number of arguments
+				iii) sequence of types of arguments
+
+		class Phone {
+			void dial() {
+			}
+			void dial(int intercomm){
+			}
+			void dial(String name) {
+			}
+			void dial(String name,String name2){
+				sop("dialing to "+name1+" and "+ name2);
+			}
+			void dial(int countryCode, long phoneNumber){
+			}
+			void dial(long phoneNumber, int countryCode){
+			}
+		}
+		class PhoneTest{
+			public static void main(String args[]){{
+				Phone phone = new Phone();
+				phone.dial();phone.dial(103);
+	phone.dial("Mahendra"); phone.dial(91,9820443464L);
+				phone.dial("Mahendra","Sachin");
+			}
+		}
+
+		c. method overriding
+		e. operator overloading
+
+
+
+4. Inheritance
+
+
+		Acquiring properties from existing business entities
+
+		class A // A is the super class
+		{
+		}
+		class B extends A // B is the sub class
+		{
+		}
+
+
+
+		a. single level
+			A
+			|
+			B
+
+
+		b. multi-level
+
+			A
+			|
+			B
+			|
+			C
+
+		c. multiple level
+			
+	class->	A		B <--interface
+			|		|
+			-----------
+				|
+		    class C extends A implements B
+			{
+
+			} 
+
+
+
+
+
+	------------------------------------------------------
+				field		method		class
+	------------------------------------------------------
+	
+	final		CONSTANT		cannot be		cannot be
+							overridden	extended
+	------------------------------------------------------
+	
+	static		sharing single	 it refers	--
+				copy across	 other static
+				multiple objs	 members
+
+	------------------------------------------------------
+	abstract		NA			function		 
+							without
+							code body
+							[ declared in
+							an abstract
+							class ]
+	------------------------------------------------------
+
+purpose of the abstract class is to provide Symmetrical contracts
+impose mandates on the direct children
+
+
+		A +  B = success
+		|	|
+	controll uncontrolled
+	|
+attention
+intention
+assignments
+study
+reading
+programs
+concepts
+books
+discussion
+practice
+
+
+				
+
+		GeometricalShape
+			|draw();
+		------------
+		|
+		Circle
+		|draw(){ } <-- mandatory, since it is the direct child of
+		|				an abstract parent
+		Ellipse
+		draw(){} <-- is not mandatory - since it is not the direct
+						child of any abstract parent
+
+
+	abstract class GeometricalShape
+	{
+		abstract void draw(); <-- function has no body
+		abstract void calcArea(); <-- undefined / declared
+	}
+	
+	class Circle extends GeometricalShape
+	{
+		int radius;
+
+		void draw() //defined here - compulsory - mandatory
+		{
+			sop("drawing circle");
+		}
+		void calcArea()
+		{
+			float area = PI *r *r;
+		}
+	}
+	class Ellipse extends Circle
+	{
+		int radius2; //physically 2 radiuses are here, radius, radius2
+
+		void draw() // this is not mandatory 
+		{
+			sop("drawing ellipse");	
+		}	
+		void calcArea()
+		{
+			float area = PI * radius * radius2;
+		}
+	}
+	class Rectangle extends GeometricalShape
+	{
+
+		void draw() //defined here - compulsory - mandatory
+		{
+			sop("drawing rectangle");
+		}
+		void calcArea()
+		{
+			float area = l * b;
+		}
+	}
+
+	abstract function
+		- a function is declared
+		- without any code body
+			e.g.
+				abstract void draw();
+
+		= such function is known as partial contract of a class
+
+		= partial = incomplete contract of a class
+
+  ********		draw() any GeometricalShape
+
+		is there any image known as GeometricalShape??????
+
+		<-----------------geometrical shape ------------->
+		Circle	Triangle   Rectangle    Square   Ellipse
+
+
+	an abstract function MUST be declared by an abstract class
+
+		
+
+
+
+	if there is a 10/- Rs currency note with you
+
+	it means it is a data / field
+
+			int money=10; <-- 10 rs note
+
+			abstract 	int money = 10;
+				|	<--complete--->
+			incomplete
+
+		abstract = partial = incomplete
+
+
+
+
+
+Online mode : everyone is first bencher
+no one is back bencher
+
+online : your participation is more important
+increase the quality of your learning
+
+
+1 void clear(void)
+2 void goto(int,int)
+3 float avg(int,int,int)
+4 float answer()
+-----------------------
+1 exclusive
+2 inherited
+3 inherited-cum-overridding
+4 implemented
+
+class A
+{
+	void fun() { } //1. exclusive
+}
+class B extends A
+{
+	void foo(){ } // 1. exclusive
+}
+interface X {
+  void far();
+}
+class C extends A imlements X
+{
+	void foo()
+	{
+	}
+	public void far() {
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+	static data members		vs		non-static data members
+	|							|
+	kiteCount						owner
+								color
+								length
+
+	referred via the ClassName		object reference 
+
+
+
+
+interfaces
+-----------
+
+     abstract (incomplete) method = method without body
+
+	abstract class = 1) may have abstract methods 
+				  2) may have non-abstract methods [ concrete ]
+
+	
+	interfaces = pure abstract class
+
+		pure abstract class = a class only with abstract methods
+
+	
+	interface A
+	{
+		void fun(); // by default it is public abstract
+
+	}
+	interface B
+	{
+		void foo(); //by default public and abstract
+	
+	}
+
+	class X
+	{
+	}
+	class Y extends X implements A,B
+	{
+		fun() { }
+		foo() { }
+	}
+
+
+
+
+
+Exception Handling
+	
+		Exception = runtime error
+
+Case1: problems related to your vehicle
+
+1. some problem you will anticipate - predict 
+at your home + in the parking zone
+
+	such problems = CHECKED exceptions
+			1. CarNotWashedException
+			2. CarKeyNotFoundException
+			3. DrivingLicenceNotFoundException
+			4. TyrePuncturedException
+			5. DriverLateException
+
+2. some promblme you will encounter - can NOT predict
+during your JOURNEY (travel) + on the road
+
+	such problem = UNCHECKED exceptions
+
+			1. RedSignalDisHonouredException
+			2. SpeedLimitExceededException
+			3. BumperException
+			4. PotHoleException
+			5. HeavyRainException
+			6. AccidentException
+			7. LaneException
+
+
+				compiler environment = javac Journey.java
+		--------------------------------------
+		| You are at home|Car in the Parking |
+		--------------------------------------
+							|1km
+				+--------------+
+				| 3km	2km
+				|
+				|4km
+				|<---- runtime environment - java Journey
+				|
+				|5km
+				|
+				|10km
+				office
+
+
+					Object
+					|
+			-----------------------
+				|
+			Throwable
+				| every object of this can be thrown 
+			----------------------
+			|			| 
+			Error		Exception <-1 - can be caught in the catch
+						| <-- checked exception
+			----------------------------------------------
+			| <-- Except		|			|
+			|below class		|			|
+			|				|	2		| 3  .. 4 5 6 ....100s
+		RuntimeException		IOException	SQLException ... .. ..
+		|<-- unchecked
+---------------------------
+|				|  |
+NullPointerException|  |
+				| ArithmeticException
+		IndexOutOfBoundsException
+			|
+---------------------------------------
+|							|
+ArrayIndexOutOfBoundsException   StringIndexOutOfBoundsException
+
+
+
+
+1. You can handle exception using if and else conditions	
+		a BIG jungle of if.else.if..else..if...else is created
+
+	void fundTransfer(BankAccount source, BankAccount target, float amt)
+	{
+		BL1-> find source
+		if(source found)
+			then
+				BL2-> find target
+					if target found
+					then
+						BL3 ->check source balance > amt
+							if (source balance > amt
+						BL4->	withdraw the amt from source
+						BL5->	deposit the amt to target
+							else
+					ERR1->		insufficient balance
+					else
+				ERR2->	target not fund
+		else
+	ERR3->	source not found
+	}
+		OR 
+
+2. You can handle exceptions using try..catch...finally  way...
+
+
+
+	void fundTransfer(BankAccount source, BankAccount target, float amt)
+	{
+		try
+		{
+			- it would have the BUSINESS LOGIC
+			BL1-> find source
+			BL2-> find target
+			BL3-> check source balance > amt
+			BL4-> withdraw the amt from source
+			BL5-> deposit the amt to target
+		}
+		catch(if source not found) -- catch cluster below
+		{						would have ERROR handling
+			sop - source not found	LOGIC
+		}
+		catch(if target not found)
+		{
+			sop - target not fund
+		}
+		catch(if source balance < amt)
+		{
+			sop - insufficient balance
+		}
+		finally
+		{
+			sop("bound to run regardless of the exception");
+			//close some resources opened by the try block
+
+		}
+
+
+User defined exceptions | custom exceptions
+---------------------------
+
+
+
+		first decide the TYPE of the exception
+
+				checked? Yes, then extend Exception class
+
+				OR
+
+				unchecked? Yes, then extend RuntimeException
+
+
+		//UNCHECKED
+		class SpeedLimitException extends RuntimeException
+		{
+		}
+
+		//CHECKED
+		class CarKeyNotFoundException extends Exception 
+		{
+		}
+
+
+
+Assignment
+------------
+1. Association Example
+	created by you in the previous lecture
+
+	cook function should be recreated 
+	with exception handling logic around it
+	2 checked
+	2 unchecked
+
+			Lassi cook(Water w, Curd curd, ... .. ..) throws SourCurdException, IceCubeNotReadyException
+			{
+
+				SourCurdException ex = new SourCurdException();
+
+				if...
+				BlenderException ex = new BlenderException("Power is down");
+					throw ex;
+
+				if ...		
+					WateryLassiException ex = new WaterLassiException....
+					
+				IceCubeNotReadyException ex = new IceCubeNotReadyException();
+				return ex;
+			}
+
+
+
+
+Packages
+-----------
+
+
+
+			packages = similar to directories
+
+
+			store classes in the relevant folders
+
+					java
+					|
+			---------------------------------------
+			|			|		|		|
+			lang			awt		sql		net
+			|			|		|		|
+			Object		Frame	Driver	Socket
+			System				DriverManager
+			Thread				ResultSet
+			Exception
+
+
+	main-folder-->		  jungle <--- main package
+						|
+			---------------------------------
+			|		 |		|		|
+folders --->	cave		river	tree		farm <-- sub-packages
+			|		 |		|		|
+			Tiger	 Frog	Parrot	House <-- classes
+			WhiteTiger Fish	Monkey	FarmHouse
+			BengalTiger		Chimp
+
+Tiger.java
+------------
+package jungle.cave; <-- means this class Tiger or all other classes
+				mentioned in this file are belong to this folder
+				or packge called as jungle.cave
+
+public class Tiger
+{
+
+}
+
+----------------------------------------------------------------
+
+COLLECTIONS
+------------
+
+
+				Iterable <-- interface
+					|4
+				Collection <--interface
+					|5
+					|add(); <--declared
+			---------------------
+			|			|
+			List			Set <-- interfaces
+			|duplicates	|unique
+			|6			|8
+		------------	 ------------
+		|		|	  |		|
+	ArrayList LinkedList TreeSet	HashSet <-- containers	
+	add(){}	add(){}	add(){}	add(){}
+
+
+				Map
+				|
+			----------------
+			|			|
+		HashMap			TreeMap
+
+
+
+ You ------ > relative/friend
+					|
+					|
+				apartment
+				|			Ashwin Apartment
+				|				|
+				ground floor --> NAME BOARD
+								1st floor
+							101
+							102
+							103
+								2nd floor
+							201
+							202 ...Sanchi Saxena
+							|		|
+							key		value
+
+
+
+
+
+		Iterator = step through the collection to access the
+			elements/contents of the collection
+		so that Algorithms can function
+
+Co-creators
+
+		 <--- drink() <-- Algorithm
+		||
+		|| <--- Iterator (Straw)
+	|	||	|
+	|----||----|
+	|		|
+	|	<------------Content (ButterMilk)
+	|		|
+	|		|<--- Container <-- Glass
+	|		|
+	+---------+
+
+
+java.lang.Comparable interface <-- for the Chemicalelement to implement
+			|
+		compareTo(Object o) { }
+
+
+	so that the TreeSet can add the data in it based on
+	the chemical's atomicNumber or atomicName or formula
+
+
+Similarly
+	we saw -> NumAvg -- TreeSet of numbers to add number not divisible by 6and 5
+
+
+
+			
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+

@@ -4,8 +4,8 @@ public class EmployeeTest {
 	public static void main(String[] args) {
 		Employee emp1 = new Employee();
 		
-		emp1.empno=12323;
-		emp1.name="Julie";
+		emp1.setEmpno(12323);
+		emp1.setName("julie");
 		
 		Address homeAddr = new Address();
 		homeAddr.setHouse("120");
@@ -23,25 +23,69 @@ public class EmployeeTest {
 		offAddr.setState("Maharashtra");
 		offAddr.setPin("400050");
 		
-		emp1.addresses.add(homeAddr);
-		emp1.addresses.add(offAddr);
+		Address nativeAddr = new Address();
+		nativeAddr.setHouse("620");
+		nativeAddr.setStreet("South Avenue");
+		nativeAddr.setHouse("Mera Ghar");
+		nativeAddr.setCity("Agra");
+		nativeAddr.setState("Delhi");
+		nativeAddr.setPin("420070");
 		
+	//	emp1.addresses.add(homeAddr);
+	//	emp1.addresses.add(offAddr);
+	
+		emp1.addAddress(homeAddr);
+		emp1.addAddress(offAddr);
+		emp1.addAddress(nativeAddr);
+
 		emp1.printEmployee();
 		
 	}
 }
 class Employee
 {
-	int empno;
-	String name;
+	private int empno;
+	private String name;
 	
-	ArrayList<Address> addresses = new ArrayList<Address>();
+	private ArrayList<Address> addressList = new ArrayList<Address>();
 	
+	
+	void addAddress(Address newAddress) {
+		 addressList.add(newAddress);
+	}
+	
+	
+	public int getEmpno() {
+		return empno;
+	}
+
+
+
+
+	public void setEmpno(int empno) {
+		this.empno = empno;
+	}
+
+
+
+
+	public String getName() {
+		return name;
+	}
+
+
+
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+
 	void printEmployee() {
 		System.out.println("empno : "+empno);
 		System.out.println("empno : "+name);
 		
-		for(Address a : addresses) {
+		for(Address a : addressList) {
 			System.out.println("Address : "+a);
 		}
 

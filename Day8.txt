@@ -1339,16 +1339,99 @@ interface
 
 
 
+	interface Flower
+	{
+		void fragrance();
+	}
 
+	class Rose implements Flower //implementation 1
+	{
+		void void fragrance()
+		{
+			Sop("Sweat and spicy smell of Rose..");
+		}
+	}
+	class Jasmine implements Flower //implementation 2
+	{
+		void fragrance()
+		{
+			Sop("Musky smell of jasmine..");
+		}
+	}
+	class Lily implements Flower //implemention 3
+	{
+		void fragrance()
+		{
+			Sop("Citrine smell of Lily...");
+		}
+	}
+	
+	class PerfumeCreation
+	{
+			Poison create(Rose x, Jasmine y)
+			{
+				x.fragrance(); //sweat and spicy
+				y.fragrance(); //musky
+				Poison pos = new Poison();
+				return pos;
+			}
+			Perfume createInFlexiway(Flower x, Flower y)
+			{
+				x.fragrance();
+				y.fragrance();
+				if() 
+					 per = new Poison();
+				else
+					if()
+						per = new Fahernheit();
+					else
+						if()
+							per = new ParkAvenue();
 
+				return per;
+			}
+	}
 
+	interface Perfume
+	{
+	}
+	class Fahernheit implements Perfume
+	{
 
+	}
+	class Poison implements Perfume
+	{
+	}
+	class ParkAvenue implements Perfume
+	{
+	}
+	class Test
+	{
+		main() {
+			PerfumeCreation pc = new PerfumeCreation();
+			Rose r1 = new Rose("White");
+			Rose r2 = new Rose("Red");
 
+			Jasmine j = new Jasmine();
+			Lily l = new Lily();
+
+			pc.createInFlexiway(r1,j);
+			pc.createInFlexiway(r2,l);
+			pc.createInFlexiway(j,r1);
+		}
+	}
+	
 
 
 
 
 	
+
+
+
+
+
+
 
 
 

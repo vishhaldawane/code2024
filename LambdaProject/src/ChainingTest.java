@@ -1,9 +1,48 @@
 import java.util.Arrays;
 
+class Cow
+{
+	Milk milkACow() {
+		System.out.println("milking a cow ....");
+		return new Milk();
+	}
+}
+class Milk
+{
+	Curd coagulate() {
+		System.out.println("coagulating milk....");
+		return new Curd();
+	}
+}
+class Curd
+{
+	Butter churn() {
+		System.out.println("churning curd....");
+
+		return new Butter();
+	}
+}
+class Butter
+{
+	ClarifiedButter boil() {
+		System.out.println("boiling butter....");
+
+		return new ClarifiedButter();
+	}
+}
+class ClarifiedButter
+{
+	void pureGhee() {
+		System.out.println("Pure Ghee is healthy....");
+	}
+}
 public class ChainingTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		ClarifiedButter c = new Cow().milkACow().coagulate().churn().boil();
+		c.pureGhee();
+		
 		Student student = new Student();
 		Game g = student.fun();
 		
@@ -13,7 +52,7 @@ public class ChainingTest {
 		
 		ca.showBalance();
 		
-	//	student.fun().play().card().showBalance();
+		student.fun().play().card().showBalance();
 	//	student.fun().play().card().showBalance();
 		 //        Game	   Score  CurrentAccount
 		

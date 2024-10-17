@@ -72,7 +72,7 @@ public class StreamTest {
 	//	List<Employee> empList = empStream.collect(Collectors.toList());
 
 		empList.forEach(x->System.out.println(x));
-		
+			
 		System.out.println("-----------");
 		
 		List<Employee> emps = Stream.of(staff).filter(e->e.empno>100).collect(Collectors.toList());
@@ -83,6 +83,11 @@ public class StreamTest {
 		Stream.of(staff).filter(e->e.salary>5000).forEach(x->System.out.println(x));
 
 		System.out.println("-----------");
+		double cost = Stream.of(staff).filter(e->e.empno>102).map(e->e.salary).reduce(0.0,Double::sum);
+		System.out.println("Cost : "+cost);
+		
+		//filter(e->e.salary>5000).forEach(x->System.out.println(x));
+
 	}
 }
 

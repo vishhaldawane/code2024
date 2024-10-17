@@ -21,6 +21,9 @@ class Curd
 
 		return new Butter();
 	}
+	void churn(int x) {
+		System.out.println("churned for "+x+" minutes");
+	}
 }
 class Butter
 {
@@ -40,8 +43,13 @@ public class ChainingTest {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		ClarifiedButter c = new Cow().milkACow().coagulate().churn().boil();
-		c.pureGhee();
+		//ClarifiedButter c = 
+		new Cow().milkACow().coagulate().churn().boil().pureGhee();;
+		//c.pureGhee();
+		System.out.println("--------");
+		new Cow().milkACow().coagulate().churn(5);
+		System.out.println("--------");
+
 		
 		Student student = new Student();
 		Game g = student.fun();

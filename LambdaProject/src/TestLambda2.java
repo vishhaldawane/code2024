@@ -47,14 +47,40 @@ public class TestLambda2 {
 		
 		ArrayList<Integer> listOfNums = new ArrayList<Integer>();
 		listOfNums.add(50);
-		listOfNums.add(60);
-		listOfNums.add(70);
-		listOfNums.add(80);
+		listOfNums.add(63);
+		listOfNums.add(75);
+		listOfNums.add(82);
+		listOfNums.add(85);
+		listOfNums.add(35);
+		listOfNums.add(83);
 		
+		
+		//1st implementation
 		Consumer<Integer> activity7 = (n) -> { System.out.println(n); };
 		
-		listOfNums.forEach(activity7);
+		//2nd implementation
+		Consumer<Integer> activity8 = (n) -> { 
+			if(n%5==0)
+				System.out.println(n); 
+		};
 		
+		//3rd implementation
+		Consumer<Integer> activity9 = (n) -> { 
+			if(n%2==0)
+				System.out.println(n); 
+		};
+		
+		listOfNums.forEach(activity7);
+
+		System.out.println("---------");
+
+		
+		listOfNums.forEach(activity8);
+		
+		System.out.println("---------");
+
+		listOfNums.forEach(activity9);
+
 	}
 }
 
@@ -75,6 +101,7 @@ class Y extends X
 interface MathActivity
 {
 	int expression(int x, int y);
+	//int expr2(int i);
 }
 class Addition implements MathActivity
 {

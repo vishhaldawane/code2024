@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.function.Consumer;
 
 public class TestLambda2 {
 	public static void main(String[] args) {
@@ -43,8 +45,15 @@ public class TestLambda2 {
 		System.out.println(" "+activity5.expression(10, 20));
 		System.out.println(" "+activity6.expression(100, 20));
 		
+		ArrayList<Integer> listOfNums = new ArrayList<Integer>();
+		listOfNums.add(50);
+		listOfNums.add(60);
+		listOfNums.add(70);
+		listOfNums.add(80);
 		
+		Consumer<Integer> activity7 = (n) -> { System.out.println(n); };
 		
+		listOfNums.forEach(activity7);
 		
 	}
 }

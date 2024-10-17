@@ -47,19 +47,31 @@ import java.util.stream.Stream;
  */
 public class StreamTest {
 	public static void main(String[] args) {
-		Employee staff[] = {
+		Employee staff[] = null;/* {
 				new Employee(101,"Julie",5000),
 				new Employee(102,"Jane",6000),
 				new Employee(103,"Janet",7000),	
 				new Employee(104,"Robert",4000),	
 				new Employee(105,"Peter",3000),	
 				
-		};
+		};*/
+		
 		//for(int i=0;i<staff.length;i++) {
 		//	System.out.println(staff[i]);
 		//}
-		Stream<Employee> empStream = Stream.of(staff);
-		empStream.forEach(emp->System.out.println(emp));
+		try {
+			
+			if(staff == null) {
+				staff = new Employee[5];// allocate 5 pointers	
+				staff[0] = new Employee(101,"Julie",5000); 
+			//	staff[1] = new Employee(103,"Raj",5000); 
+		//		staff[2] = new Employee(108,"Julie",8000); 
+				
+			}
+			
+			Stream<Employee> empStream = Stream.of(staff);
+			empStream.forEach(emp->System.out.println(emp));
+		
 		
 		System.out.println("-------");
 		
@@ -75,19 +87,45 @@ public class StreamTest {
 			
 		System.out.println("-----------");
 		
-		List<Employee> emps = Stream.of(staff).filter(e->e.empno>100).collect(Collectors.toList());
+		List<Employee> emps = Stream.of(staff).
+				filter(e->e.empno>100 && e.empname.startsWith("J")).
+				collect(Collectors.toList());
+		
+		/*
+			annonymous function
+			
+				(x)-> { x.empno>100 }
+				
+		
+		*/
 		emps.forEach(x->System.out.println(x));
 
 		System.out.println("-----------");
 
-		Stream.of(staff).filter(e->e.salary>5000).forEach(x->System.out.println(x));
+		Stream.of(staff).
+		filter(e->e.salary>5000).
+		forEach(x->System.out.println(x));
 
 		System.out.println("-----------");
-		double cost = Stream.of(staff).filter(e->e.empno>102).map(e->e.salary).reduce(0.0,Double::sum);
+		double cost = Stream.of(staff).
+				filter(e->e.empno>102).
+				map(e->e.salary).
+				reduce(0.0,Double::sum);
+		
+		//7000 4000 3000 <-- map is having 3 values to focus upon
+		//double sum=0;
+		// sum = sum + 7000;
+		// sum = sum+ 4000
+		// sum = sum + 3000;
+		//return sum;
+		
 		System.out.println("Cost : "+cost);
 		
 		//filter(e->e.salary>5000).forEach(x->System.out.println(x));
-
+		}
+		catch(NullPointerException e) {
+			System.out.println("Container is empty...");
+		}
 	}
 }
 

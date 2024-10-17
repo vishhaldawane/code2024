@@ -1351,7 +1351,7 @@ interface
 			Sop("Sweat and spicy smell of Rose..");
 		}
 	}
-	class Jasmine implements Flower //implementation 2
+	class Jasmine extends Rose //  implements Flower //implementation 2
 	{
 		void fragrance()
 		{
@@ -1424,16 +1424,104 @@ interface
 
 
 
+Lambda Expression
+------------------
+		- simple and short block of code
+		- which may take parameters
+		- and return a value
+		- they are same as any method
+		- but they DONT HAVE ANY NAME
+
+		class Account
+		{
+			int withdraw()
+			{
+			}
+			int () ->
+			{
+			} 
+		}
+		Account a = new Account();
+		a.withdraw();
+
+		SYNTAX:
+			1	parameter -> expression
+			2	(parameter)-> expression
+			3	(para1, para2) -> expression
+
+			in the expression you cannot have conditional/loop statements
+
+				 ARGUMENTS     ->  CODE BODY
+				(para1, para2) -> { body }
+				
+
+
+
+
+		interface with one function
+
+		that may take arguments
+
+		interface Flower
+		{
+			void fragrance(int x);
+			void calcPetals();
+		}
+	
+		Flower flower = new Flower(); // invalid - cannot instantiate interface
+
+
+		 ReadyMade		CustomMade
+		Flower flower = new Rose(); //1
+		flower.fragrance(); //2
+				OR
+
+		Rose flower = new Rose(); //3
+		flower.fragrance(); //4
+
+
+
+	class Garden
+	{
+		void touch(Rose r)
+		{
+
+		}
+		void touch(Flower f) | Consumer c
+		{
+		}
+	}
+
+
+
+	class Rose implements Flower
+	{
+			void fragrance(int x) {
+			}
+	}	
+
+	Rose rose = new Rose(); //not only Rose's object, BUT also an implementation of Flower
+
+
+	Functional Interfaces 
+	-----------------------
+		- one single abstract method
+		What is Lambda ?
+			an implementation of that functional interface
+
+		Function code is treated as ARGUMENT
+		- without writing any class
+		- 
+
+	interface Flower
+	{
+		void fragrance();
+	}
+	
+	no classname and no method name;
+
+	Flower flower = () -> {
+			};
+		
 
 	
-
-
-
-
-
-
-
-
-
-
-

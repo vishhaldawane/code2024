@@ -1,8 +1,130 @@
 import java.util.ArrayList;
 import java.util.function.Consumer;
 
+class Z
+{
+	void fun() {
+		Coffee c = new Coffee();
+		c.drink();
+		
+		Juice j = new Juice();
+		Water w = new Water();
+		ButterMilk b = new ButterMilk();
+		
+		j.drinkIt();
+		j.color();
+		j.stirrIt();
+		
+		w.drinkIt();
+		w.emotions();
+		w.stirrIt();
+		
+		b.drinkIt();
+		b.sour();
+		b.stirrIt();
+		
+		Drinking d1 = new Juice();
+		Drinking d2 = new Water();
+		Drinking d3 = new ButterMilk();
+		
+		d1.drinkIt();
+	//	d1.stirrIt();
+		//d1.color(); //not possible
+		
+		d2.drinkIt();
+	//	d2.stirrIt();
+		//d2.emotions(); //invalid
+		
+		d3.drinkIt();
+	//	d3.stirrIt();
+		//d3.sour(); // invalid
+		
+		// now without writing an independent class
+		// and without implementing an interface
+		// we would like to develop an implementation
+		//of Drinking!!!!! how ???? Lambda
+		
+		Drinking d4 = ()->{System.out.println("Drinking Tea");};
+		d4.drinkIt();
+		
+		Drinking d5 = ()->{System.out.println("Drinking SugarCane Juice");};
+		d5.drinkIt();
+		
+		
+		
+	}
+	
+	
+}
+class Coffee
+{
+	void drink() { //DEFINED - and only one DEFINITION
+		System.out.println("Drinking only coffee...");
+	}
+}
+@FunctionalInterface
+interface Drinking
+{
+	void drinkIt();
+	//void stirrIt();
+}
+class Juice implements Drinking
+{
+	public void drinkIt() {
+		System.out.println("Drinking only Juice...");
+
+	}
+	void color() {
+		System.out.println("Juice color is orange...");
+	}
+	
+	public void stirrIt() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+class Water implements Drinking
+{
+	public void drinkIt() {
+		System.out.println("Drinking only Water...");
+
+	}
+	void emotions() {
+		System.out.println("Water has emotions...");
+	}
+
+	public void stirrIt() {
+		// TODO Auto-generated method stub
+		
+	}
+}
+class ButterMilk implements Drinking
+{
+	public void drinkIt() {
+		System.out.println("Drinking only ButterMilk...");
+
+	}
+	void sour( ) {
+		System.out.println("ButterMilk is little sour...");
+	}
+	
+	public void stirrIt() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+
+
+
+
+
 public class TestLambda2 {
 	public static void main(String[] args) {
+		
+		Z z = new Z();
+		z.fun();
 		
 		//1
 		Addition addition = new Addition();
@@ -100,7 +222,7 @@ class Y extends X
 @FunctionalInterface
 interface MathActivity
 {
-	int expression(int x, int y);
+	int expression(int x, int y); // pure abstract method
 	//int expr2(int i);
 }
 class Addition implements MathActivity
@@ -113,6 +235,9 @@ class Addition implements MathActivity
 //for the sake of operation , we are writing an extra class
 // with classname + implements interface + method body + code 
 
+// to develop the implementation class
+// class ClassName  implements InterfaceName
+// {   public void methodName(){ } }
 class Multiplication implements MathActivity
 {
 	public int expression(int x, int y) {

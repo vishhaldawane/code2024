@@ -44,20 +44,21 @@ public class TestLambda1 {
 		System.out.println("--------------");
 
 		//Consumer <-- type 
-		primes.forEach
-		( 
-				(n)-> {
-					System.out.println(">>> Value : "+n);
-				} // this function code is treated as AN ARGUMENT
-				
-		);
+		//we are sending the lambda function [ function without name]
+		//insde the forEach- and expecting a callback to your lambda
+		//from the forEach
+		
+		primes.forEach( (n)-> {System.out.println(">>> Value : "+n);}  );
 		
 		Consumer<Integer> funName = (n)-> {
 										System.out.println(">>> Value : "+n);
-									}    ;
+										System.out.println(">>> Value : "+n);
+										System.out.println(">>> Value : "+n);
+										System.out.println("--------");							
+		}    ;
 		
 		System.out.println("--------------");
-
+//2 3 5 7 11
 		primes.forEach(funName);
 		
 		

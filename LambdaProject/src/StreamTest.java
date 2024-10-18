@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -62,11 +63,12 @@ class Executive extends Employee { }
 public class StreamTest {
 	public static void main(String[] args) {
 		Employee staff[] =  {
-				new Employee(101,"Julie",5000),
-				new Employee(102,"Jane",6000),
-				new Employee(103,"Janet",7000),	
-				new Employee(104,"Robert",4000),	
-				new Employee(105,"Peter",3000),	
+				new Employee(8,"Julie",5000),
+				new Employee(15,"Jane",6000),
+				new Employee(22,"Amit",7000),
+				new Employee(29,"Robert",4000),	
+				new Employee(36,"Robert",4000),	
+				new Employee(50,"Bharat",3000),	
 			//	new Executive()
 		};
 		
@@ -97,7 +99,9 @@ public class StreamTest {
 		}
 	*/	
 		List<Employee> empList = Stream.of(staff).collect(Collectors.toList());
-	//	List<Employee> empList = empStream.collect(Collectors.toList());
+		long rows = empList.stream().count();
+		System.out.println("COUNT "+rows);
+		//	List<Employee> empList = empStream.collect(Collectors.toList());
 
 		empList.forEach(x->System.out.println(x));
 			
@@ -153,7 +157,51 @@ public class StreamTest {
 			System.out.println("emp "+firstEmp);
 		
 		
+			System.out.println("Sorted employees - by empno ");
+			Stream.of(staff).sorted((e1,e2)->Integer.compare(e1.empno, e2.empno))		
+			.forEach(x->System.out.println(x));
+			
+			System.out.println("\nSorted employees - by empname ");
+			Stream.of(staff).sorted((e1,e2)->e1.empname.compareTo(e2.empname))		
+			.forEach(x->System.out.println(x));
+			
+			System.out.println("\nSorted employees - by salary ");
+			Stream.of(staff).sorted((e1,e2)-> Double.compare(e1.salary, e2.salary))		
+			.forEach(x->System.out.println(x));
+			
+			
+			Employee emp1  = Stream.of(staff).min((e1,e2)->e1.empno-e2.empno).get();
+			System.out.println("Emp with lowest empno : "+emp1);
+			
+			Employee emp2  = Stream.of(staff).max((e1,e2)->e1.empno-e2.empno).get();
+			System.out.println("Emp with highest empno : "+emp2);					
 		
+			System.out.println("-------distinct emp-----");
+			List<Employee> distEmp  = Stream.of(staff).distinct().collect(Collectors.toList());
+			
+			distEmp.forEach((e)->System.out.println(e));
+
+			if(Stream.of(staff).allMatch(e->e.empno%2==0)) {
+				System.out.println("All Emp's empno is divisible by 2");
+			}
+			else {
+				System.out.println("not all Emp's empno is divisble by 2");
+			}
+			System.out.println("-----------");
+			if(Stream.of(staff).anyMatch(e->e.empno%5==0)) {
+				System.out.println("Few Emp's empno is divisible by 5");
+			}
+			else {
+				System.out.println("not all Emp's empno is divisble by 5");
+			}
+			System.out.println("-----------");
+			if(Stream.of(staff).noneMatch(e->e.empno%7==0)) {
+				System.out.println("No Emp's empno is divisible by 7");
+			}
+			else {
+				System.out.println("Few Emp's empno is divisble by 7");
+			}
+			
 		}
 		catch(NullPointerException e) {
 			System.out.println("Container is empty...");
@@ -179,6 +227,23 @@ class Employee
 	@Override
 	public String toString() {
 		return "Employee [empno=" + empno + ", empname=" + empname + ", salary=" + salary + "]";
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(empno);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Employee other = (Employee) obj;
+		return empno == other.empno;
 	}
 	
 	

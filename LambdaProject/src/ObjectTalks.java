@@ -3,16 +3,20 @@ public class ObjectTalks {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Girl a = new Girl("Shweta");
-		a.gossip("Riya").talk("Julie").makeTea();
+		//new Girl("Shweta").makeTea();
+		
+		//a.gossip("Riya").makeTea();; //.talk("Julie").makeTea();
 		
 		
-		a.makeTea();
+		//a.makeTea();
 		
-		
+		new Girl("Shweta").gossip("Julie").talk("Jane").makeTea("Julia").washCup("Simmy");;
 	}
 
 }
+//isA hasA usesA  producesA
+//java master
+
 class Girl
 {
 	String name;
@@ -29,7 +33,12 @@ class Girl
 		Girl x = new Girl(g);
 		return x;
 	}
-	void makeTea() {
+	Girl makeTea(String thatName) {
 		System.out.println(name+" is making tea");
+		Girl g = new Girl(thatName);
+		return g;
+	}
+	void washCup(String herName) {
+		System.out.println(herName+" washing the cup");
 	}
 }

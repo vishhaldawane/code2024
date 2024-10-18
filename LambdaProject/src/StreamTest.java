@@ -1,14 +1,26 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //Stream = flow -- water input at your home
 
 // mainpipe --> water
-// washroom, shower, basin, flushtank -> press lever-> , 
+// washroom, shower, basin, flush tank -> press lever-> , 
 // taps
+// garden, fountains, water-inlets for plants
 
+//1gb movie stored in a HDD
+//on a website
+//		|
+//		|movie's data is sent to the customer in
+//		|the form of stream (flow)
+//	--------------
+//	|	|	|	|
+//  c1  c2  c3  c4
+// 1-60 1-60 1-60 1-60
+// 20   5     30   45
 
 // - stream api is used to process the collections
 // collection = container - to hold objects
@@ -17,8 +29,8 @@ import java.util.stream.Stream;
  	The objects stored in the collection/container
  	we need certain activities on it to perform
  	
- 	1. filtering
- 	2. mapping of it
+ 	1. filtering - (e)->e.empno>5
+ 	2. mapping of it - map((e)->e.salary).reduce(0.0,Double::sum)
  	3. changes/reduction 
  	4. rearrangement - sorting
  	
@@ -38,39 +50,43 @@ import java.util.stream.Stream;
   		Operations in STREAM
   		1. intermediate
 			student.fun().play().card().showBalance();
-			
+						Game   Score  Account
   		2. Terminate
   			new Cow().milkACow().coagulate().churn(5);
-  		
-  		
-  
+  				              Milk        Curd
+  				              
+  	  
  */
+class BankAccount { }
+class Executive extends Employee { }
 public class StreamTest {
 	public static void main(String[] args) {
-		Employee staff[] = null;/* {
+		Employee staff[] =  {
 				new Employee(101,"Julie",5000),
 				new Employee(102,"Jane",6000),
 				new Employee(103,"Janet",7000),	
 				new Employee(104,"Robert",4000),	
 				new Employee(105,"Peter",3000),	
-				
-		};*/
+			//	new Executive()
+		};
+		
+		//array is of limited size
+		//cannot grow or shrink
+		//can hold only one type value, or its children
 		
 		//for(int i=0;i<staff.length;i++) {
 		//	System.out.println(staff[i]);
 		//}
 		try {
 			
-			if(staff == null) {
-				staff = new Employee[5];// allocate 5 pointers	
-				staff[0] = new Employee(101,"Julie",5000); 
-			//	staff[1] = new Employee(103,"Raj",5000); 
+		//		staff[0] = new Employee(101,"Julie",5000); 
+		//		staff[1] = new Employee(103,"Raj",5000); 
 		//		staff[2] = new Employee(108,"Julie",8000); 
 				
-			}
+			
 			
 			Stream<Employee> empStream = Stream.of(staff);
-			empStream.forEach(emp->System.out.println(emp));
+			empStream.forEach(  emp->System.out.println(emp)  );
 		
 		
 		System.out.println("-------");
@@ -87,6 +103,7 @@ public class StreamTest {
 			
 		System.out.println("-----------");
 		
+		//intermediate list of emp's having empno>100 with ename start with J
 		List<Employee> emps = Stream.of(staff).
 				filter(e->e.empno>100 && e.empname.startsWith("J")).
 				collect(Collectors.toList());
@@ -95,8 +112,6 @@ public class StreamTest {
 			annonymous function
 			
 				(x)-> { x.empno>100 }
-				
-		
 		*/
 		emps.forEach(x->System.out.println(x));
 
@@ -122,6 +137,23 @@ public class StreamTest {
 		System.out.println("Cost : "+cost);
 		
 		//filter(e->e.salary>5000).forEach(x->System.out.println(x));
+		
+		System.out.println("Emp with empno > 100 and name start with J ");
+		Stream.of(staff).
+				filter(e->e.empno>100 && e.empname.startsWith("J")).forEach(x->System.out.println(x));
+		
+		
+		System.out.println("FIRST EMP with empno > 100 and name start with J ");
+		Employee firstEmp = 
+				Stream.of(staff).
+				filter(e->e.empno>100 && e.empname.startsWith("J"))
+				.findFirst().orElse(null);
+				
+
+			System.out.println("emp "+firstEmp);
+		
+		
+		
 		}
 		catch(NullPointerException e) {
 			System.out.println("Container is empty...");
@@ -134,6 +166,8 @@ class Employee
 	int empno;
 	String empname;
 	double salary;
+	
+	Employee() { }
 	
 	public Employee(int empno, String empname, double salary) {
 		super();

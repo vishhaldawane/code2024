@@ -1461,6 +1461,7 @@ Lambda Expression
 
 		Flower flower = new Flower(); // invalid - cannot instantiate interface
 
+interface based programming - loose coupling  and cohension
 
 		 ReadyMade		CustomMade
 		Flower flower = new Rose(); //1
@@ -1538,6 +1539,33 @@ Lambda Expression
 		
 	
 
+
+Lambda
+
+		a function without name [ question is how to invoke it??]
+
+		- it can have a single line [ that should return a value ]
+		- it can have mulit line [ must be in curley brackets ]
+		- it may take parameters
+		- it is not necessary to write this lambda inside a class
+		- it can be an argument inside any method
+
+			Jungle.roam( (x)->x+10 );
+
+			It is execuetd via a functional interface
+			- what is a functional interface
+				an interface with a single abstract method
+				
+
+		p -> Sop("hello");
+
+		(p) -> Sop("Hello :"+p);
+
+		()-> Sop("Hello");
+
+		(p1,p2)-> Sop("Hello : "+p1+" and "+p2);
+
+		
 ------------------------------------------
 
 Stream API

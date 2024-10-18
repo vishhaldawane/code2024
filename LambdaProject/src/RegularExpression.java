@@ -9,6 +9,19 @@ public class RegularExpression {
 		System.out.println("Enter username (min 8 max 12) : ");
 		name = scan.nextLine(); //name may have spaces now
 		
+		
+		//email address
+		//  a@b.c <-- valid email
+		//  a@.c <-- invalid
+		
+		// a@b@c.com <-- invalid
+		// a.b@c.com <-- valid
+		
+		// a.b@y.m.com <-- valid
+		
+		// a123.test@g.com <-- valid
+		// a.test123@g.com <--valid
+		
 		//username,email and password
 		
 		if(name.equals("")) {

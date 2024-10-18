@@ -63,12 +63,13 @@ class Executive extends Employee { }
 public class StreamTest {
 	public static void main(String[] args) {
 		Employee staff[] =  {
-				new Employee(8,"Julie",5000),
-				new Employee(15,"Jane",6000),
+				new Employee(18,"Julie",5000),
+				new Employee(12,"Jane",6000),
 				new Employee(22,"Amit",7000),
-				new Employee(29,"Robert",4000),	
+				new Employee(22,"Amit",7000),
+				new Employee(28,"Robert",4000),	
 				new Employee(36,"Robert",4000),	
-				new Employee(50,"Bharat",3000),	
+				new Employee(52,"Bharat",3000),	
 			//	new Executive()
 		};
 		
@@ -156,24 +157,25 @@ public class StreamTest {
 
 			System.out.println("emp "+firstEmp);
 		
-		
+		// 3  5  2  6  8 <--quick sort
+			
 			System.out.println("Sorted employees - by empno ");
-			Stream.of(staff).sorted((e1,e2)->Integer.compare(e1.empno, e2.empno))		
+			Stream.of(staff).sorted(  (x,y) -> Integer.compare(y.empno, x.empno)  )		
 			.forEach(x->System.out.println(x));
 			
 			System.out.println("\nSorted employees - by empname ");
-			Stream.of(staff).sorted((e1,e2)->e1.empname.compareTo(e2.empname))		
+			Stream.of(staff).sorted( (e1,e2) -> e1.empname.compareTo(e2.empname))		
 			.forEach(x->System.out.println(x));
 			
 			System.out.println("\nSorted employees - by salary ");
-			Stream.of(staff).sorted((e1,e2)-> Double.compare(e1.salary, e2.salary))		
+			Stream.of(staff).sorted( (e1,e2)-> Double.compare(e1.salary, e2.salary))		
 			.forEach(x->System.out.println(x));
 			
 			
-			Employee emp1  = Stream.of(staff).min((e1,e2)->e1.empno-e2.empno).get();
+			Employee emp1  = Stream.of(staff).min( (e1,e2)->e1.empno-e2.empno   ).get();
 			System.out.println("Emp with lowest empno : "+emp1);
 			
-			Employee emp2  = Stream.of(staff).max((e1,e2)->e1.empno-e2.empno).get();
+			Employee emp2  = Stream.of(staff).max( (e1,e2)->e1.empno-e2.empno   ).get();
 			System.out.println("Emp with highest empno : "+emp2);					
 		
 			System.out.println("-------distinct emp-----");

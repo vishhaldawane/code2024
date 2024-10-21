@@ -4,7 +4,35 @@ import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+/*
+ * 1								2
+ * 	Employee staff[]		List<Employee>  empList
+ * 			|100									|
+ * 
+ * 	Stream s<Employee>=			Stream s<Employee>=empList.stream();
+ * 			Stream.of(staff);
+ * 
+ * 3
+ * 	List<Employee> eList = s.
+ * 			filter(e->e.empno>100 && e.empname.startsWith("J")).
+ * 			collect(Collectors.toList());
+ * 
+ * 	if stream is not there
+ * 
+ * List<Employee> empTempList = new ArrayList<Employee>();
+ * 
+ * for(int i=0;i<staff.length;i++)
+ * {
+ * 		Employee ex = staff[i];
+ * 		if(ex.getEmpno() > 101 && ex.getEmpName().startsWith("J")) {
+ * 		{
+ * 			empTempList.add(ex);
+ * 		}
+ * 		return empTempList;
+ * 
+ * }
+ * 
+ */
 //Stream = flow -- water input at your home
 
 // mainpipe --> water
@@ -58,10 +86,50 @@ import java.util.stream.Stream;
   				              
   	  
  */
+interface Flower
+{
+	void flowering();
+}
+class Rose implements Flower
+{
+	public void flowering() {
+		System.out.println("Rose is red ... symbol of love and danger...");
+	}
+}
+class Lotus implements Flower
+{
+	public void flowering() {
+		System.out.println("Lotus the symbol of spirituality...");
+	}
+}
+class Marigold implements Flower
+{
+	public void flowering() {
+		System.out.println("Marigold garlands used in dassera.....");
+	}
+}
+class Garden
+{
+	static Flower get(String hint) {
+		Flower flower = null;
+		if(hint.equalsIgnoreCase("valentine"))
+			flower = new Rose();
+		else if (hint.equalsIgnoreCase("diwali"))
+			flower = new Lotus();
+		else if (hint.equalsIgnoreCase("dassera"))
+			flower = new Marigold();
+		return flower;
+	}
+}
+
 class BankAccount { }
 class Executive extends Employee { }
 public class StreamTest {
 	public static void main(String[] args) {
+		
+		Flower flower= Garden.get("dassera");
+		flower.flowering();
+		
 		Employee staff[] =  {
 				new Employee(18,"Julie",5000),
 				new Employee(12,"Jane",6000),
@@ -86,6 +154,7 @@ public class StreamTest {
 		//		staff[1] = new Employee(103,"Raj",5000); 
 		//		staff[2] = new Employee(108,"Julie",8000); 
 				
+			
 			
 			
 			Stream<Employee> empStream = Stream.of(staff);
@@ -130,7 +199,9 @@ public class StreamTest {
 		double cost = Stream.of(staff).
 				filter(e->e.empno>102).
 				map(e->e.salary).
-				reduce(0.0,Double::sum);
+				reduce(0.0,Double::sum); //single row function
+		
+		// select sum(sal) from emp where empno>102
 		
 		//7000 4000 3000 <-- map is having 3 values to focus upon
 		//double sum=0;
@@ -158,6 +229,8 @@ public class StreamTest {
 			System.out.println("emp "+firstEmp);
 		
 		// 3  5  2  6  8 <--quick sort
+			// empList.stream().sorted(     );			
+			
 			
 			System.out.println("Sorted employees - by empno ");
 			Stream.of(staff).sorted(  (x,y) -> Integer.compare(y.empno, x.empno)  )		
@@ -208,8 +281,34 @@ public class StreamTest {
 		catch(NullPointerException e) {
 			System.out.println("Container is empty...");
 		}
+		//Stream.of(staff).fil
+	
+			List<Employee> eList= MyUtility.getData(Stream.of(staff));
+	}
+	
+	
+}
+
+
+class MyUtility
+{
+	static List<Employee>  getData(Stream<Employee>  s) {
+		List<Employee> empList ;
+		
+		empList = s.filter(e->(e.salary > 5000 )).collect(Collectors.toList());
+		
+		
+		return empList;
+		
 	}
 }
+
+
+
+
+
+
+
 
 class Employee
 {

@@ -1572,8 +1572,25 @@ Stream API
 ------------
 
 
+Regular Expression
 
+
+		sa x    ena
+		sa k  s ena
+		|| |  | |||
+		12 3  4 567
+		sa[kx]s*ena
+
+
+		ag a r   wal
+		ag r a   wal
+		ag g a r wal
+		12 3 4 5 678 
 			
+		ag[arg][ra]r*wal
+		12  3   4  5 678
+
+
 
 
 

@@ -8593,3 +8593,19 @@ java.lang.NullPointerException: Cannot assign field "x" because "offer.bounds" i
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:654)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:591)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1462)
+
+!ENTRY com.genuitec.eclipse.monitor 4 0 2024-10-24 01:38:10.683
+!MESSAGE Unable to save client metrics
+!STACK 0
+java.io.IOException: No space left on device
+	at java.base/java.io.FileOutputStream.writeBytes(Native Method)
+	at java.base/java.io.FileOutputStream.write(FileOutputStream.java:347)
+	at java.base/sun.nio.cs.StreamEncoder.writeBytes(StreamEncoder.java:242)
+	at java.base/sun.nio.cs.StreamEncoder.implFlushBuffer(StreamEncoder.java:321)
+	at java.base/sun.nio.cs.StreamEncoder.implFlush(StreamEncoder.java:325)
+	at java.base/sun.nio.cs.StreamEncoder.flush(StreamEncoder.java:159)
+	at java.base/java.io.OutputStreamWriter.flush(OutputStreamWriter.java:248)
+	at java.base/java.io.BufferedWriter.flush(BufferedWriter.java:257)
+	at java.base/java.util.Properties.store0(Properties.java:941)
+	at java.base/java.util.Properties.store(Properties.java:915)
+	at com.genuitec.eclipse.monito

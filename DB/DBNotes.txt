@@ -1,0 +1,191 @@
+
+
+
+
+	Database Management System
+	  |			|		|
+   data 		   CRUD		automate [ save your time ]
+   |
+various type
+of data
+
+character
+integral
+floating
+String
+boolean
+Date	
+
+		
+	
+			     who
+				|  ELSE
+		----------------------
+		|				|
+		where			when
+		|				|
+	-------------------------------	
+	|			|			|
+	why			what			how
+
+
+			Why database
+
+
+file.txt <-- plain text
+---------
+101 Jack 5000 C-908, West Avenue, Mumbai, 400018 <-- row
+102 Jane 6000
+103 Julie 7000
+|     |    |
+col1 col2 col3
+----------------
+
+
+address.txt
+-------------
+col1 col2  col3         col4     col5
+|	|		|		|		|
+101 C-908, West Avenue, Mumbai, 400018
+101 D-108, East Avenue, Pune, 500020
+
+
+
+time table
+
+
+	Monday	Tuesday	Wed	Thu	Fri	Sat	
+r1	Maths1	PT
+r2	English	English
+r3	History	SciI
+			
+r4	Maths2
+r5   Maths2
+r6	Geogra		
+
+exam time table
+
+	Day	Date		Time		Venue	Subject
+	Tue	12-8-2016 10:30	NMIMS	Maths1	
+	Wed	23-8-2016 10:30	NMIMS	Maths1	
+	Thu	26-8-2016 10:30	NMIMS	Maths1	
+	Fri	12-8-2016 10:30	NMIMS	Maths1	
+
+
+	File				DBMS
+	|				|
+FileInputStream		SQL Queries
+	|				|		
+	Java				Oracle <--
+
+
+	structured query language
+
+	1. DDL [ auto committed ] <-- actions cannot be undone
+			create				
+				create structure
+			alter
+				add/modify columns
+			truncate
+				empty it [ but structure is safe ]
+			drop		
+				destroy the table structure along with data
+
+	
+	2. DML	[ auto commit is off in oracle ]
+
+			insert
+	
+			update
+			
+			delete	
+
+	3. TCL
+
+			commit - permenant changes [ cannot be undone ]
+			rollback - can undo the changes
+
+	4. DCL [ admin activity ]
+			grant
+			revoke
+
+	5. DQL
+			
+
+
+
+	employee table
+
+	empno	ename	sal
+	101		Jack		5000
+	102		Jane		6000
+	103		Julie	7500
+----------------------------------
+
+		SQL> update employee set sal=sal+500 where empno=103
+		SQL>....
+		SQL>...
+		SQL> 
+		SQL> ..
+		SQL> 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Aca<--bread butter
+Profe <-- luxury
+finance <-- 
+
+			product + services
+			cars    + service 
+			
+	intangible	soap
+
+			Accounting	Research	Sales	 Operations
+			  10 - NY		20 Dallas	30 Chicago 40 Boston
+				|			|		|
+			-----------  -------+	-------------
+			|		   |	    		|
+			KING		  JONE	   BLAKE
+			|7839	  |7566		|7698	
+		President		 Manager-		---------------------------
+		5000			 2975		|	  |	   |	     |	 |
+		|			   |			MARTIN ALLEN TURNER WARD JAMES
+		Clark        ------------	<-------salesan-------->clerk	
+		|manager		|		|	7654   7499  7844   7521 7900
+		|			Ford		Scott
+		Miller		|7902	|7788
+		 clerk		Smith	Adam
+					|clerk	|clerk
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

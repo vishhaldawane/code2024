@@ -353,16 +353,67 @@ ORA-02290: check constraint (SQL_QFIJNQPMZNRPUPQZIYADFKTKV.SYS_C00171070629) vio
 ORA-02291: integrity constraint (SQL_QFIJNQPMZNRPUPQZIYADFKTKV.SYS_C00171070632) violated - parent key not found ORA-06512: at "SYS.DBMS_SQL", line 1721
 
 
-
+-- below constraints are issued alongwith the column definitions
+- such constraints are known as column level constraints
 CREATE TABLE EMP2 
 (
     EMPNO NUMBER PRIMARY KEY, 
     ENAME VARCHAR2(20) NOT NULL, 
     JOB   VARCHAR2(20) CHECK (JOB IN('ANALYST','MANAGER','CLERK','SALESMAN')),
     EMAIL VARCHAR2(20) UNIQUE,
-    SALARY NUMBER CHECK (SALARY >= 5000),
+    SALARY NUMBER CHECK (SALARY >= 5000 AND SALARY > COMM),
+    COMM NUMBER CHECK ( COMM < SALARY )
     DNO    NUMBER REFERENCES DEPT(DEPTNO)
 )
+
+TABLE LEVEL CONSTRAINTS ARE ISSUED AFTER THE TABLE STRCTURE CREATION
+
+CREATE TABLE EMP2 
+(
+    EMPNO NUMBER , 
+    ENAME VARCHAR2(20) NOT NULL, 
+    JOB   VARCHAR2(20), 
+    EMAIL VARCHAR2(20),
+    SALARY NUMBER ,
+    DNO    NUMBER, 
+
+    PRIMARY KEY (EMPNO),
+    CHECK (JOB IN('MANAGER','ANALYST')),
+    UNIQUE (EMAIL),
+    CHECK (SALARY >= 6000),
+    FOREIGN KEY ( DNO) REFERENCES DEPT(DEPTNO)
+)
+
+CREATE TABLE EMP52
+(
+    EMPNO NUMBER , 
+    ENAME VARCHAR2(20) NOT NULL, 
+    JOB   VARCHAR2(20), 
+    EMAIL VARCHAR2(20),
+    SALARY NUMBER ,
+    DNO    NUMBER, 
+);
+
+
+alter table emp5 add PRIMARY KEY (EMPNO);
+alter table emp52 add primary key (empno)
+alter table emp52 modify email unique;
+alter table emp52 modify salary check (salary > 7000)
+alter table emp52 add foreign key (dno) references dept(deptno)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     select * from emp2
 INSERT INTO EMP2 VALUES (101,'JACK','MANAGER','jack@gmail.com',5400,10)
 INSERT INTO EMP2 VALUES (102,'JANE','SALESMAN','jane@gmail.com',5800,20)
@@ -376,14 +427,38 @@ select * from emp2
 
 
 
+set operators
+----------
+union
+union all
+minus
+intersect
+
+A) below query would eliminate the duplicate rows between both the queires
+	and present the distinct records too
+
+select rownum, empno,ename, job, deptno from emp where rownum<=7
+    union 
+select rownum, empno,ename, job, deptno from emp where rownum<=5
 
 
+B) complete set of A and B would be combined regardless of the duplicate rows
+
+select rownum, empno,ename, job, deptno from emp where rownum<=7
+    union all 
+select rownum, empno,ename, job, deptno from emp where rownum<=5
 
 
+C) A-B = the distinct records of the subtraction, rec 6 and 7 would come
 
+select rownum, empno,ename, job, deptno from emp where rownum<=7
+   minus 
+select rownum, empno,ename, job, deptno from emp where rownum<=5
 
-
-
+D) only common records of A+B are shown, distincts are eliminated
+select rownum, empno,ename, job, deptno from emp where rownum<=7
+    intersect 
+select rownum, empno,ename, job, deptno from emp where rownum<=5
 
 
 

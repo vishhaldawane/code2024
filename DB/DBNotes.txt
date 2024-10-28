@@ -179,6 +179,70 @@ finance <--
 
 
 
+nested queries
+
+		select ... (select. ... (select )))
+
+Joins
+-------
+
+		combine columns of more than 2 tables
+
+		select * from table1, table2
+
+		cartesion product
+
+
+1 natural join
+	- cartesion product of the joined tables
+
+2 equi join
+	- give a meaningfull condition to this cartesion product
+		to filter the desired rows
+
+
+3 non-equi join
+
+	records matching a particular range of data
+
+
+
+4 outer join
+		- SHOWS THE UNMATCHED RECORDS as well
+	
+	right outer join
+	left outer join
+	full outer join
+
+5 self join
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		PARMATMA			
+		ATMA				- ATMA  SHAKTI
+		INTELLECT			- GYAN  SHAKTI
+		MIND - 7 LEVELS	- ICHHA SHAKTI - DESIRE
+		BODY
+
+
+	I KNOW		| NOW I KNOW
+	WHAT I KNOW	| WHAT I DONT KNOW
+		------------------------
+	I DONT KNOW	| I DONT KNOW
+	WHAT I KNOW	| WHAT DONT KNOW
+
 
 
 

@@ -116,7 +116,7 @@ AtmMachine1		atm2			atm3
 		collections			-----------------------
 		file i/o				|		|		|
 		jdbc					stateless	statefull	message
-		|
+		|DB : CRUD
 		adv java
 		networking
 		RMI

@@ -1,0 +1,207 @@
+
+
+
+	JDBC
+
+		Java Database Connectivity 
+
+					- set of classes and interfaces
+					to deal with DATABASE
+					DDL, DML, DQL, TCL
+
+
+	JavaApplication <-----> any  database
+						Oracle
+						MySQL
+						MS-SQL
+						Sybase
+						HSQLDB
+						..
+						..
+int,float,String				number, number(10,2)
+double,boolean					varchar(20),char
+Calendar,LocalDate				date
+				
+
+**** following diagram is NOT of inheritance
+
+1. MySQL database
+2. find the driver to connect [ internet ]
+3. use DriverManager class to load the above driver
+4. use DriverManager to connect to the database
+	using databasename, username and password
+5. acquire the connection
+6. once connection is established
+	decide the operation [ SELECT | DML | procedure ]
+7. create Statement
+
+				Driver <-- interface [ pure abstract ]
+				|
+			---------------
+					|
+				implementation for MySQL
+				|	use this implementation to connect to
+				|	the particular database
+				|
+			DriverManager
+				| registerDriver()
+				| getConnection();
+				|
+			Connection
+				|
+			---------------------------
+			|		|			|
+		Statement PreparedStatement CallableStatement
+		SELECT		DML			procedure/function
+
+
+
+
+interface Account
+{
+	Flying withdraw();
+	Edible deposit();
+}
+interface Edible
+{
+	void eat();	
+}
+class Laddu implements Edible
+{
+	public void eat() {
+	
+	}
+}
+
+interface Flying
+{
+	void fly();
+}
+
+--------------------------------
+//1
+class SavingsAccount implements Account
+{
+	Flying withdraw()
+	{
+		Flying fl = new Bird();
+		return fl;
+	}
+}
+//2
+class CurrentAccount implements Account
+{
+	Flying withdraw()
+	{
+		Flying fl = new Flight();
+		return fl;
+	}
+}
+//1
+class Bird implements Flying
+{
+	void fly() {
+	}
+}
+//2
+class Flight implements Flying
+{
+	void fly() {
+	}
+}
+
+class SomeThing
+{
+	static Account get(String hint) {
+		Account a = null;
+			if(hint.equalsIgnoreCase("s")
+				a = new SavingsAccount();
+			else 
+			if(hint.equalsIgnoreCase("c")
+				a = new CurrentAccount();
+			
+		return a;	
+	}
+}
+
+class Test {
+  main() {
+	Scanner scan = new Scanner(System.in);
+	Account a = SomeThing.get(scan.next()); 
+	Flying  f = a.withdraw();
+	f.fly();
+  }
+}
+
+
+
+
+
+
+
+
+1	i->			Instrument
+				|use();
+		------------------------------------------------
+		|									|
+2	ac->	MusicalInstrument				MedicalInstrument
+			| play();							|operate();
+			| 						---------------------------
+			|						|					|
+			|					SurgicalMedicalInstrument	PathalogicalMedicalInstrument
+			|					|sterile()				|
+			|			----------------------		------------------------
+			|			|		|		|		|		|		|
+			|			Cutter	Needle		GlucoMeter  ECGMachine MRIMachine		
+			|
+		---------------------------------------------------------------
+		|						|						|		
+3 ac->StringBasedMusicalInstrument	DrumBasedMusicalInstrument	AirBasedMusicalInstrument
+		| tuneStrings();			|tuneSurface();			|blowAir();
+		|						|						|
+-----------------------			-----------------------	-----------------------
+|		|		|			|		|		|		|	 |		|
+Guitar	Violin	Sitar		Dhol		Tabla	Duff		Flute Trumpet MouthOrgan
+|			|
+Electronic   Cello
+Guitar
+
+
+interface Instrument
+{
+	void use();
+}
+abstract class MusicalInstrument implements Instrument
+{
+	abstract void play();
+}
+abstract class StringBasedMusicalInstrument extends 
+			MusicalInstrument
+{
+	abstract void tuneStrings();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

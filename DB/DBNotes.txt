@@ -523,7 +523,23 @@ INSERT INTO DEPT VALUES (20,'RESEARCH','DALLAS');
 INSERT INTO DEPT VALUES (30,'SALES','CHICAGO');
 INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON');		
 
+1. make a package as dao or whatever suitable name
+2. make a pojo/bean/component/model
+	it is similar to the table's structure
+	e.g. Department
 
+3. make a poji - DepartmentDAO
+4.	declare 5 methods in this interface
+	for CRUD
+
+5. make the implementation of the above poji
+
+
+
+
+
+
+ 
 
 
 

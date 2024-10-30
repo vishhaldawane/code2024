@@ -462,6 +462,76 @@ select rownum, empno,ename, job, deptno from emp where rownum<=5
 
 
 
+What is a model class = a representative of your table
+Bean = component = pojo = plain old java object
+
+	table dept
+	---------------
+	deptno	dname	loc
+	------------------------
+	10		ACC		 NY
+	20		RESEARCH	 NJ
+	30		SALES	 NP
+	40		OPERATIONS NM
+
+	class Department 
+	{
+		int departmentNumber;
+		String departmentName;
+		String departmentLocation;
+		
+		public Department(){ //mandatory | implicit|explicit
+		}
+
+		set/get
+	}
+
+	Department deptObj = new Department();
+	deptObj.setDepartmentNumber(result.getInt(1));
+	deptObj.setDepartmentName(result.getString(2));
+	deptObj.setDepartmentLocation(result.getString(3));
+
+----------------------
+InsertTestWithModel.java
+
+		load the driver
+		connect
+		PreparedStatement pst;--- insert query..7 ???
+
+		Employee emp = new Employee();
+		
+		Accept data from the user;
+		emp.setEmployeeNumber( scan.nextInt() );
+		..
+		..
+		..
+		pst.setInt(emp.getEmployeeNumber());
+		..
+		..
+		pst.executeUpdate();
+
+
+
+CREATE TABLE DEPT (
+ DEPTNO              NUMBER(2) NOT NULL,
+ DNAME               VARCHAR(14),
+ LOC                 VARCHAR(13),
+ CONSTRAINT DEPT_PRIMARY_KEY PRIMARY KEY (DEPTNO));
+
+INSERT INTO DEPT VALUES (10,'ACCOUNTING','NEW YORK');
+INSERT INTO DEPT VALUES (20,'RESEARCH','DALLAS');
+INSERT INTO DEPT VALUES (30,'SALES','CHICAGO');
+INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON');		
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -19,7 +19,7 @@ public class SelectTest {
 			System.out.println("Connected ..."+conn);
 			Statement st= conn.createStatement();
 			System.out.println("Statement created...");
-			ResultSet rs = st.executeQuery("select * from emp");
+			ResultSet rs = st.executeQuery("select * from customer");
 			System.out.println("result set ...");
 			
 			while(rs.next()) {
@@ -34,11 +34,11 @@ public class SelectTest {
 				System.out.println("EMPNO : "+empno);
 				System.out.println("ENAME : "+ename);
 				System.out.println("JOB   : "+job);
-				System.out.println("MGR   : "+managerCode);
+				/*System.out.println("MGR   : "+managerCode);
 				System.out.println("HIRING: "+doj);
 				System.out.println("SAL   : "+salary);
 				System.out.println("COMM  : "+comm);
-				System.out.println("DNO   : "+dno);
+				System.out.println("DNO   : "+dno);*/
 				System.out.println("-----------------");
 				
 			}

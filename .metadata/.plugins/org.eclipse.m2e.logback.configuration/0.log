@@ -34,3 +34,56 @@
 2024-10-29 09:31:51,012 [Worker-8: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_POSIX - null
 2024-10-30 12:23:03,922 [Worker-16: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
 2024-10-30 12:23:05,768 [Worker-11: Decoration Calculation] WARN  org.eclipse.jgit.util.FS_POSIX - null
+2024-10-30 17:01:50,679 [Worker-99: Creating project "FirstProject"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:FirstProject:0.0.1-SNAPSHOT @ /Users/apple/CG2024/FirstProject/pom.xml.
+2024-10-30 17:01:51,240 [Worker-99: Creating project "FirstProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FirstProject/src/main/java
+2024-10-30 17:01:51,243 [Worker-99: Creating project "FirstProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FirstProject/src/main/resources
+2024-10-30 17:01:51,244 [Worker-99: Creating project "FirstProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FirstProject/src/test/java
+2024-10-30 17:01:51,244 [Worker-99: Creating project "FirstProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FirstProject/src/test/resources
+2024-10-30 17:01:51,737 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:01:51,746 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:01:51,749 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:01:51,749 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:02:49,313 [Worker-100: Creating project "FirstMavenProject"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:FirstMavenProject:0.0.1-SNAPSHOT @ /Users/apple/CG2024/FirstMavenProject/pom.xml.
+2024-10-30 17:02:49,344 [Worker-100: Creating project "FirstMavenProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FirstMavenProject/src/main/java
+2024-10-30 17:02:49,344 [Worker-100: Creating project "FirstMavenProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FirstMavenProject/src/main/resources
+2024-10-30 17:02:49,345 [Worker-100: Creating project "FirstMavenProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /FirstMavenProject/src/test/java
+2024-10-30 17:02:49,345 [Worker-100: Creating project "FirstMavenProject"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /FirstMavenProject/src/test/resources
+2024-10-30 17:02:49,668 [Worker-101: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:02:49,669 [Worker-101: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:02:49,671 [Worker-101: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:02:49,672 [Worker-101: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:05:28,132 [Worker-103: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:05:28,137 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:05:28,139 [Worker-103: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:05:28,140 [Worker-103: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:05:50,872 [Worker-104: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:05:50,873 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:05:50,874 [Worker-104: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:05:50,875 [Worker-104: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:14:27,577 [Worker-92: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:FirstMavenProject:0.0.1-SNAPSHOT @ /Users/apple/CG2024/FirstMavenProject/pom.xml.
+2024-10-30 17:14:27,672 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:14:27,674 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:14:27,677 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:14:27,678 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:14:28,843 [Worker-108: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:14:28,844 [Worker-108: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:14:28,845 [Worker-108: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:14:28,846 [Worker-108: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:15:01,198 [Worker-92: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:FirstMavenProject:0.0.1-SNAPSHOT @ /Users/apple/CG2024/FirstMavenProject/pom.xml.
+2024-10-30 17:15:01,230 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:15:01,231 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:15:01,233 [Worker-92: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:15:01,233 [Worker-92: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:15:02,353 [Worker-107: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:15:02,354 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:15:02,357 [Worker-107: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:15:02,358 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:20:49,754 [Worker-113: Building] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.cg:FirstMavenProject:0.0.1-SNAPSHOT @ /Users/apple/CG2024/FirstMavenProject/pom.xml.
+2024-10-30 17:20:49,836 [Worker-113: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:20:49,838 [Worker-113: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:20:49,840 [Worker-113: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:20:49,846 [Worker-113: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:20:50,992 [Worker-107: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:20:50,993 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2024-10-30 17:20:50,995 [Worker-107: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2024-10-30 17:20:50,995 [Worker-107: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

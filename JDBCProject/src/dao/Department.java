@@ -1,5 +1,6 @@
 package dao;
 
+//I
 //for the dept table
 public class Department { 
 	private int departmentNumber;

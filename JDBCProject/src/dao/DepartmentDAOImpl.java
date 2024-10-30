@@ -9,6 +9,8 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+
+//III
 //implementation class
 public class DepartmentDAOImpl implements DepartmentDAO {
 
@@ -52,15 +54,13 @@ public class DepartmentDAOImpl implements DepartmentDAO {
 
 	@Override
 	public Department selectDepartment(int deptNumber) {
-		
 		Department dept = null;
-		
 		try {
 			Statement st= conn.createStatement();
 			System.out.println("Statement created...");
 			ResultSet rs = st.executeQuery("select * from dept where deptno="+deptNumber);
 			System.out.println("result set ...");
-			
+
 			if(rs.next()) {
 				dept = new Department(); //EMPTY
 				

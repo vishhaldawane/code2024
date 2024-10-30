@@ -537,9 +537,34 @@ INSERT INTO DEPT VALUES (40,'OPERATIONS','BOSTON');
 
 
 
+maven project
+---------------
+	maven = project management tool
 
 
- 
+	- declare the libraries
+
+	then it automates the downloading of
+	required libraries
+
+
+ 				FirstMavenProject
+				|
+			-------------
+			|		|
+			src		pom.xml [project object model]
+			|
+	------------------------
+		|			|
+		main			test
+		|			|	
+	-------------		TEST CASES HERE
+	|		|			
+	java	 resources
+	|
+JAVA CODE
+HERE
+
 
 
 

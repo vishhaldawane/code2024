@@ -543,9 +543,20 @@ maven project
 
 
 	- declare the libraries
+		via the <dependencies> tag 
 
 	then it automates the downloading of
 	required libraries
+
+	A.jar -> B.jar -> C.jar
+
+	if u download A via maven
+	then it will also download B and C too
+
+maven dependencies for oracle jdbc
+maven dependencies for hibernate
+maven dependencies for spring  
+ 
 
 
  				FirstMavenProject
@@ -566,11 +577,38 @@ JAVA CODE
 HERE
 
 
+Archieve = a single file [ holding multiple files into it]
+				like a bundle 
+	
+tar = Tape ARchieve
+
+winrar = windows archieve
+
+jar = Java ARchieve
 
 
+1)notepad A.java
+----------------
+class Tiger{}class Lion { } class Bear { } 
+
+class Hen {}class Horse {}class Dog{ }
+
+class Parrot{}class Sparrow{}class Crow{}
+-----------------
+2) at the command prompt of this A.java
+		jar -cvf animal.jar *.class <-- to include all
+				the class files into a single file
+
+			-c  means create a jar file
+			-v means verbose [ means to show up ]
+			-f file to create
+jar -cvf birds.jar Crow.class Parrot.class Sparrow.class
+jar -cvf domestic-animals.jar Hen.class Horse.class Dog.class
+jar -cvf wild-animals.jar Tiger.class Lion.class Bear.class
+----------------------------------------
 
 
-
+	
 
 
 

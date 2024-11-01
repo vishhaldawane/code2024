@@ -1,0 +1,68 @@
+
+
+		Hibernate - JPA
+			
+
+			- ORM framework
+
+		Object <--> Relational <-- Mapping
+
+
+
+	BankAccount ba = new BankAccount();
+	ba.setters... to fillup
+
+1	Then u use the JDBC code to store the above
+	above object details(acno,name,balance etc)
+	into the DATABASE
+	
+2	We have also seen the DAO pattern to store the
+	same details in the DATABASE
+
+	Department + DepartmentDAO	+ DepartmentDAOImpl
+						  insert into dept values...
+	Employee   + EmployeeDAO  + EmployeeDAOImpl
+						  insert into emp values..
+
+	Customer   + CustomerDAO  + CustomerDAOImpl
+						  insert into customer values...
+		
+3.   ORM way
+			you dont have to take care of 
+			connection or driver management
+			you dont have to create statement
+			you dont have to create preparedStatement
+
+			simply use the Hibernate-JPA framework
+			to manage your java objects on the
+			database system 
+
+use maven project to manage all the things
+----------------------------------------------
+		1. You need Hibernate framework library
+		2. you need a pojo mapped with the database
+				Department.java
+
+		3. this mapping is done via xml file
+
+				department.hbm.xml <-- describe your pojo
+
+				- in the above xml file you will have to
+				mention the table name, primary key
+				setter/getters properites
+				- generator strategies
+
+		4. a configuration (xml) file used to mention
+		   the details like, driver name, url, 
+			database username, database password etc
+
+			
+
+
+
+
+
+
+
+ 
+

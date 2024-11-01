@@ -3,9 +3,13 @@ package com.vishal;
 //1. make a pojo as per the table structure
 
 //1.1 : below class would be mapped with the actual table
+//decorator | annotation
+
+
 public class Department {
 
 	//1.2 : below column would be the primary key
+	
 	private int departmentNumber;
 		
 	private String departmentName;

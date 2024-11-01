@@ -40,6 +40,10 @@
 use maven project to manage all the things
 ----------------------------------------------
 		1. You need Hibernate framework library
+			pom.xml <-- added the dependency for hibernate
+			 [ google -> maven dependency for hibernate ]
+
+
 		2. you need a pojo mapped with the database
 				Department.java
 
@@ -55,6 +59,7 @@ use maven project to manage all the things
 		4. a configuration (xml) file used to mention
 		   the details like, driver name, url, 
 			database username, database password etc
+			dialect, mapping filename etc
 
 			
 

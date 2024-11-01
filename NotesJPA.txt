@@ -1,0 +1,9 @@
+Hibernate: 
+
+select 
+department0_.departmentNumber as departme1_0_0_, 
+department0_.departmentName as departme2_0_0_, 
+department0_.departmentLocation as departme3_0_0_ 
+from dept5 department0_ 
+where department0_.departmentNumber=?
+

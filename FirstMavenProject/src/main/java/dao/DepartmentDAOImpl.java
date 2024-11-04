@@ -8,7 +8,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
+
+import com.vishal.Department;
 
 //III
 //implementation class - USING PURE JDBC CODE

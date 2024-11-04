@@ -1,14 +1,7 @@
 package dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+
 import java.util.List;
-import java.util.Scanner;
 
 import javax.persistence.TypedQuery;
 
@@ -19,6 +12,8 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import com.vishal.Department;
 
 
 //III
@@ -48,14 +43,14 @@ public class DepartmentDAOImpl2 implements DepartmentDAO {
 		System.out.println("Got the session...");
 		Transaction trans = session.beginTransaction();
 		
-		trans.begin();
+		
 		System.out.println("Transaction started.....");
 
 			session.save(dept);
 			System.out.println("insert query fired....");
 		trans.commit();
 		System.out.println("Transaction committed....");
-
+	
 	}
 
 	@Override
@@ -96,7 +91,7 @@ public class DepartmentDAOImpl2 implements DepartmentDAO {
 		
 		Transaction trans = session.beginTransaction();
 		
-		trans.begin();
+		
 		System.out.println("Transaction started.....");
 
 		session.update(dept);
@@ -115,9 +110,12 @@ public class DepartmentDAOImpl2 implements DepartmentDAO {
 		
 		Transaction trans = session.beginTransaction();
 		
-		trans.begin();
+		
 		System.out.println("Transaction started.....");
 		Department dept = session.get(Department.class,deptNumber);
+		if(dept==null) {
+			throw new DepartmentNotFoundException("This dept id does not exists "+deptNumber);
+		}
 		session.delete(dept);
 			
 		trans.commit(); 

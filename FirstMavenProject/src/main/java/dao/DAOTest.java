@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import com.vishal.Department;
+
 public class DAOTest {
 
 	public static void main(String[] args) {

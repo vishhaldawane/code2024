@@ -5,7 +5,7 @@ package com.vishal;
 //1.1 : below class would be mapped with the actual table
 //decorator | annotation
 
-
+//original pojo
 public class Department {
 
 	//1.2 : below column would be the primary key

@@ -45,7 +45,7 @@ public class DepartmentTesting {
 				Session session = factory.openSession();
 				System.out.println("Session : "+session);
 							
-					//query created for the Department POJO													//HQL (from POJO)  vs SQL (select *  from dept5)
+					//query created for the Department POJO				//HQL (from POJO)  vs SQL (select *  from dept5)
 						TypedQuery<Department> query = session.createQuery("from Department", Department.class);
 						
 						

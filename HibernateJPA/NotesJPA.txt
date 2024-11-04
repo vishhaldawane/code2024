@@ -124,6 +124,37 @@ jar -cvf wild-animals.jar Tiger.class Lion.class Bear.class
 
 	
 
+		com.vishal
+			|
+	-----------------------------------------
+	|			|					|
+	Department	DepartmentDAO		------------------------
+				 - 5 methods		|				|
+							DepartmentDAOImpl	DepartmentDAOImpl2
+							 |					| hibernate-way
+						using pure jdbc		SessionFactory
+						code, Connection,		Session - get, save, update,delete, createQuery
+						DriverManager,			Transaction, 
+						Statement etc.
+
+
+		testing
+			|
+	------------------------------
+	|					|
+	DepartmenntDAOimpl		dao
+	testing				|
+					DepartmentDAO dao = new DepartmentDAOImpl2
+
+					@Test -> dao.selectAllDepts();
+					@Test -> dao.insertDepartment(dept);
+					..
+					..	
+					..
+
+
+
+
 
 
 

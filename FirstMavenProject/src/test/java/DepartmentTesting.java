@@ -6,31 +6,40 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.vishal.Department;
 
 public class DepartmentTesting {
 	
+	SessionFactory factory; // global variable for all
+					//test cases
+	
+	@BeforeEach
+	public void setup() {
+		StandardServiceRegistry ssr = new
+				StandardServiceRegistryBuilder()
+				.configure("hibernate.cfg.xml").build();
+		System.out.println("Service registry is created..."+ssr);
+		
+		Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
+		System.out.println("Metadata : "+meta);
+		
+		factory = meta.getSessionFactoryBuilder().build();
+		System.out.println("Factory : "+factory);
+		
+	}
+	
 	@Test
 	public void selectTest() {
 		//key and value = hashmap
-				StandardServiceRegistry ssr = new
-							StandardServiceRegistryBuilder()
-							.configure("hibernate.cfg.xml").build();
-				System.out.println("Service registry is created..."+ssr);
-				
-				Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-				System.out.println("Metadata : "+meta);
-				
-				SessionFactory factory = meta.getSessionFactoryBuilder().build();
-				System.out.println("Factory : "+factory);
 				
 				Session session = factory.openSession();
 				System.out.println("Session : "+session);
 				
 				
-						Department dept = session.get(Department.class, 30);
+						Department dept = session.get(Department.class, 20);
 						
 						
 						Assertions.assertTrue(dept!=null);
@@ -56,18 +65,7 @@ public class DepartmentTesting {
 	
 	@Test
 	public void updateTest() {
-		//key and value = hashmap
-				StandardServiceRegistry ssr = new
-							StandardServiceRegistryBuilder()
-							.configure("hibernate.cfg.xml").build();
-				System.out.println("Service registry is created..."+ssr);
-				
-				Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-				System.out.println("Metadata : "+meta);
-				
-				SessionFactory factory = meta.getSessionFactoryBuilder().build();
-				System.out.println("Factory : "+factory);
-				
+		
 				Session session = factory.openSession();
 				System.out.println("Session : "+session);
 				
@@ -109,17 +107,6 @@ public class DepartmentTesting {
 	
 	@Test
 	public void deleteTest() {
-		//key and value = hashmap
-				StandardServiceRegistry ssr = new
-							StandardServiceRegistryBuilder()
-							.configure("hibernate.cfg.xml").build();
-				System.out.println("Service registry is created..."+ssr);
-				
-				Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-				System.out.println("Metadata : "+meta);
-				
-				SessionFactory factory = meta.getSessionFactoryBuilder().build();
-				System.out.println("Factory : "+factory);
 				
 				Session session = factory.openSession();
 				System.out.println("Session : "+session);
@@ -160,17 +147,6 @@ public class DepartmentTesting {
 	
 	@Test
 	public void insertTest() {
-		//key and value = hashmap
-		StandardServiceRegistry ssr = new
-					StandardServiceRegistryBuilder()
-					.configure("hibernate.cfg.xml").build();
-		System.out.println("Service registry is created..."+ssr);
-		
-		Metadata meta = new MetadataSources(ssr).getMetadataBuilder().build();
-		System.out.println("Metadata : "+meta);
-		
-		SessionFactory factory = meta.getSessionFactoryBuilder().build();
-		System.out.println("Factory : "+factory);
 		
 		Session session = factory.openSession();
 		System.out.println("Session : "+session);

@@ -1,3 +1,8 @@
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -5,6 +10,7 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -12,6 +18,7 @@ import org.junit.jupiter.api.Test;
 import com.vishal.Department;
 
 public class DepartmentTesting {
+	
 	
 	SessionFactory factory; // global variable for all
 					//test cases
@@ -29,6 +36,42 @@ public class DepartmentTesting {
 		factory = meta.getSessionFactoryBuilder().build();
 		System.out.println("Factory : "+factory);
 		
+	}
+	
+	@Test
+	public void selectAllTest() {
+		//key and value = hashmap
+				
+				Session session = factory.openSession();
+				System.out.println("Session : "+session);
+							
+					//query created for the Department POJO													//HQL (from POJO)  vs SQL (select *  from dept5)
+						TypedQuery<Department> query = session.createQuery("from Department", Department.class);
+						
+						
+						Assertions.assertTrue(query!=null);
+						
+						System.out.println("Select Query created...");
+
+						List<Department> listDepts = query.getResultList();
+						
+						Assertions.assertTrue(listDepts.size() > 0);
+						System.out.println("Found records in the list....");
+						
+						for(Department dept : listDepts) {
+							System.out.println("DEPTNO : "+dept.getDepartmentNumber());
+							System.out.println("DNAME  : "+dept.getDepartmentName());
+							System.out.println("DLOC   : "+dept.getDepartmentLocation());
+						}
+						
+				
+				
+				session.close();
+				System.out.println("Session closed...");
+				
+				factory.close();
+				System.out.println("Factory closed...");
+				
 	}
 	
 	@Test

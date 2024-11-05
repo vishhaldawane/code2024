@@ -16,7 +16,7 @@ public class OneToOneTestCases {
 	EntityManager entityManager ;
 	
 	@BeforeEach
-	public void setSomething() {
+	public void setUp() {
 		
 		EntityManagerFactory factory = 
 				Persistence.createEntityManagerFactory("MyJPA");
@@ -116,7 +116,27 @@ public class OneToOneTestCases {
 		
 	}
 	
+	@Test
+	public void addNewEmployeeWithNewPassportTest()
+	{
+		Employee emp = new Employee();
+		emp.setEmployeeName("PETER");
+		emp.setEmployeeSalary(7000);
+		
+		Passport pass = new Passport();
+		pass.setPassportHolderName("PETER DCUNHA");
+		pass.setDateOfBirth(LocalDate.of(2004, 10, 20));
+		pass.setPassportIssuedOn(LocalDate.of(2023, 7, 22));
+		pass.setPassportExpiryOn(LocalDate.of(2033, 7, 22));
 	
+		emp.setPassport(pass);
+		
+		EntityTransaction trans = entityManager.getTransaction();
+		
+		trans.begin();
+			entityManager.persist(emp);
+		trans.commit();
+	}
 	
 }
 

@@ -1,4 +1,7 @@
-package com.vishal.onetoone;
+package com.vishal.onetomany;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -6,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 /*
@@ -15,7 +19,7 @@ import javax.persistence.Table;
  * 
  */
 @Entity
-@Table(name="employee6")
+@Table(name="employee7")
 public class Employee {
 
 	@Id
@@ -29,13 +33,18 @@ public class Employee {
 	@Column(name="sal")
 	private double employeeSalary;
 
-	@OneToOne(cascade=CascadeType.ALL)
-	@JoinColumn(name="pno",
-	    referencedColumnName = 
-	         "passport_no"
-	)
-	Passport passport; //hasA
+	@OneToMany(mappedBy="employee")
+	Set<Address> addresses = new HashSet<Address>();
+
 	
+	public Set<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(Set<Address> addresses) {
+		this.addresses = addresses;
+	}
+
 	public int getEmployeeNumber() {
 		return employeeNumber;
 	}
@@ -60,13 +69,7 @@ public class Employee {
 		this.employeeSalary = employeeSalary;
 	}
 
-	public Passport getPassport() {
-		return passport;
-	}
-
-	public void setPassport(Passport passport) {
-		this.passport = passport;
-	}
+	
 	
 	
 	

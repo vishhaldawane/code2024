@@ -209,6 +209,102 @@ in the DB			in the DB
 
 
 
+emp					
+----
+empnp	ename	salary	pno
+101		Jane		5000		12345
+102		Julie	6000		34556
+103		Janet	7000		56565
+
+
+passport
+-----				
+passport_no	passport_holder	dob	issued	expired  
+12345		....				..	...		..		
+34556
+56565
+
+create table passport
+(
+  passport_no number primary key,
+  passport_holder ...
+  dob
+  issued
+  expired
+  eno number references emp(empno)
+);
+
+
+
+
+Hibernate: select 
+employee0_.empno as empno1_1_0_, 
+employee0_.ename as ename2_1_0_, 
+employee0_.sal as sal3_1_0_, 
+employee0_.pno as pno4_1_0_, 
+
+passport1_.passport_no as passport1_2_1_, 
+passport1_.dob as dob2_2_1_, 
+passport1_.expiryDate as expiryDa3_2_1_, 
+passport1_.passport_holder as passport4_2_1_, 
+passport1_.issueDate as issueDat5_2_1_ 
+
+from Employee employee0_ 
+left outer join Passport passport1_ 
+on employee0_.pno=passport1_.passport_no 
+
+where employee0_.empno=?
+
+Hibernate: 
+select 
+passport0_.passport_no as passport1_2_0_, 
+passport0_.dob as dob2_2_0_, 
+passport0_.expiryDate as expiryDa3_2_0_, 
+passport0_.passport_holder as passport4_2_0_, 
+passport0_.issueDate as issueDat5_2_0_, 
+
+employee1_.empno as empno1_1_1_, 
+employee1_.ename as ename2_1_1_, 
+employee1_.sal as sal3_1_1_, 
+employee1_.pno as pno4_1_1_ 
+
+from Passport passport0_ 
+left outer join Employee employee1_ 
+on passport0_.passport_no=employee1_.pno 
+where passport0_.passport_no=?
+
+
+
+empno	ename	salary
+101		Srushti	5000
+102		Vidushi	6000
+103		VAnshika  7000
+
+
+address
+---------
+area		street	city	  state	country	pin  eno
+sweet	west road	mumbai MAH	Ind	    401   101
+home
+
+sadashiv  dehu road	pune   MAH	Ind	    501   101
+peth
+
+ram 		jain road	nagpur MAH	Ind	    601   101
+palace
+
+sweet	west road	mumbai MAH	Ind	    401   102
+home
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,3 +1,27 @@
+streams chained methods to be not in a single line
+make them multi line call
+and make then understand what is being passed during each line
+while streams being used
+
+exception handling
+
+maven 
+
+technical mock must be correctly answered
+
+
+NOT SAME QUESTIONS = BUT SIMILAR QUESTIONS 
+
+
+echo "# cc2024" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/vishhaldawane/cc2024.git
+git push -u origin main
+
+
 
 
 		Hibernate - JPA
@@ -151,6 +175,37 @@ jar -cvf wild-animals.jar Tiger.class Lion.class Bear.class
 					..
 					..	
 					..
+
+
+
+
+			Instrument
+				|
+		..			...
+	
+	..				..
+	
+		StringBased
+
+Guitar			Violin
+pluck the strings	Bowing the strings
+1st impl			2nd impl
+
+Hibernate			JPA
+...
+ServiceRegistry	
+Metadata			Persistence
+SessionFactory		EntityManagerFactory
+Session			EntityManager
+|				|
+save				persist
+get				find
+update			merge
+delete			remove
+
+
+store the DAta		store the Data
+in the DB			in the DB
 
 
 

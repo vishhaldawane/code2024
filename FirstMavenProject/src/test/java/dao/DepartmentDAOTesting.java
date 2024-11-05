@@ -63,6 +63,52 @@ public class DepartmentDAOTesting {
 	
 	}
 	
+	//ask from bu : candidates trained by lnd should be able
+	//to respond the questions asked by BU
+	
+	//should not spoon feeding
+	
+	//dont be as a helicopter parent
+	
+	//stage fear to be removed
+	
+	//lets start doing stage facing
+	//asking questions like BU
+	//respond to the queries
+	
+	//open your mouth...
+	
+	//lets be SMARTER
+	
+	//32 students = in a week let make 5 student to talk....
+	//infront of others
+	
+	//CCA BU = testtac
+	
+	//spring data + jpa
+	
+	//concept to be cleared...although test is cleared
+	
+	//those who exited from bengaluru got a good testtac score
+	//but couldnt clear the Mock round...from BU
+	
+	//let us change the way...to throw them in the water
+	//and let them swim....you are their to watch them
+	//instead of drowining
+	
+	
+	//max 2 hours to evaluate them 
+	
+	//show the code, ask them questions around the code
+	
+	
+	
+	
+	//too much spoon feeding
+	//not able to respond questions
+	//are they able to explain the code
+	//what happens behind the scene
+	
 	@Test
 	public void deleteDAOTest() {
 		try {

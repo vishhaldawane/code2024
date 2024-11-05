@@ -40,6 +40,7 @@ EntityManager entityManager ;
 			entityManager.persist(emp);
 		trans.commit();
 	}
+	
 	@Test
 	public void insertNewEmployeeWithAddresses() {
 		
@@ -78,6 +79,45 @@ EntityManager entityManager ;
 			entityManager.persist(emp);
 			entityManager.persist(homeAddr);
 			entityManager.persist(officeAddr);
+		trans.commit();
+	}
+	
+	@Test
+	public void insertNewEmployeeWithAddresses2() {
+		
+		System.out.println("Just running...");
+	
+		Employee emp = new Employee();
+		emp.setEmployeeName("SMITH");
+		emp.setEmployeeSalary(9000);
+		
+		Address homeAddr = new Address();
+		homeAddr.setArea("Lovely Home");
+		homeAddr.setStreet("NORTH Avenue");
+		homeAddr.setPlace("Andheri West");
+		homeAddr.setCity("Mumbai");
+		homeAddr.setState("MAH");
+		homeAddr.setCountry("India");
+		homeAddr.setPincode("400030");
+		homeAddr.setEmployee(emp);
+		
+		Address officeAddr = new Address();
+		officeAddr.setArea("Sweet Home");
+		officeAddr.setStreet("SL Road");
+		officeAddr.setPlace("Airoli West");
+		officeAddr.setCity("Thane");
+		officeAddr.setState("MAH");
+		officeAddr.setCountry("India");
+		officeAddr.setPincode("401060");
+		officeAddr.setEmployee(emp);
+		
+		emp.getAddresses().add(homeAddr);
+		emp.getAddresses().add(officeAddr);
+		
+		
+		EntityTransaction trans = entityManager.getTransaction();
+		trans.begin();
+			entityManager.persist(emp);
 		trans.commit();
 	}
 }

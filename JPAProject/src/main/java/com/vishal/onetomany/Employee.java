@@ -33,7 +33,7 @@ public class Employee {
 	@Column(name="sal")
 	private double employeeSalary;
 
-	@OneToMany(mappedBy="employee")
+	@OneToMany(mappedBy="employee", cascade=CascadeType.ALL)
 	Set<Address> addresses = new HashSet<Address>();
 
 	

@@ -9,4 +9,7 @@ public class Piston {
 	public Piston() {
 		System.out.println("Piston() default ctor...");
 	}
+	public void firePiston() {
+		System.out.println("Piston fired...");
+	}
 }

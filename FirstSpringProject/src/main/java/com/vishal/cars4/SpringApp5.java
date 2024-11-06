@@ -18,10 +18,10 @@ public class SpringApp5 {
 
 		//inversion of control  OR dependency injection
 		
-
 		Car car1 = context.getBean(Car.class); //load the object by its TYPE
 		System.out.println("car1  : "+car1); 
 		
+		car1.startCar(); // it will invoke ref.startEngine()
 		
 		
 		

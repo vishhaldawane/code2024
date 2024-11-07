@@ -1,0 +1,26 @@
+
+
+
+
+
+1.
+	Spring Project
+	|
+	mySpring.xml
+	|
+	<bean> tag
+	to describe 
+	the bean
+
+2.
+	Spring Project
+	|
+	mySpring.xml
+	|
+	@Component annotation
+	to describe the
+	bean
+
+3.   Configuration
+
+
